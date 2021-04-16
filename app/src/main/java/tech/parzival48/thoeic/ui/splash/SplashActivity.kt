@@ -62,7 +62,7 @@ class SplashActivity : AppCompatActivity() {
 	}
 
 	private fun drawAnimation() {
-		viewModel.getAnimationString().observe(this, {
+		viewModel.animationString.observe(this, {
 			binding.txtHangman.text = it
 		})
 	}
@@ -77,7 +77,7 @@ class SplashActivity : AppCompatActivity() {
 	}
 
 	private fun subscribeNewerUpdate() {
-		viewModel.getLatestVersion().observe(this, {
+		viewModel.latestVersion.observe(this, {
 			if(it != BuildConfig.VERSION_NAME) {
 				SnackbarMaker.show(
 						binding.root,
@@ -91,13 +91,11 @@ class SplashActivity : AppCompatActivity() {
 	}
 
 	private fun subscribeUrl() {
-		viewModel.getBaseUrl().observe(this, {
+		viewModel.baseUrl.observe(this, {
 			NetworkProvider.setApiUrl(it)
 			redirectToHomeActivity()
 		})
 	}
-
-
 
 	private inner class OnExitClickListener : DialogInterface.OnClickListener {
 		override fun onClick(dialog: DialogInterface?, which: Int) {

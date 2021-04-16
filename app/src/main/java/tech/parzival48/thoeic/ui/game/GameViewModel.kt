@@ -1,20 +1,16 @@
 package tech.parzival48.thoeic.ui.game
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.launch
-import tech.parzival48.thoeic.network.WordApiService
+import androidx.lifecycle.liveData
+import tech.parzival48.thoeic.network.ApiService
 import tech.parzival48.thoeic.repository.WordDataSource
 
-class GameViewModel(apiService: WordApiService) : ViewModel() {
+class GameViewModel(apiService: ApiService) : ViewModel() {
 
+	private val wordDataSource = WordDataSource(apiService)
 
-	private val wordSource = WordDataSource(apiService)
-
-	init {
-		viewModelScope.launch {
-
-		}
+	fun getWord() = liveData {
+		emit(wordDataSource.getWord())
 	}
 
 }

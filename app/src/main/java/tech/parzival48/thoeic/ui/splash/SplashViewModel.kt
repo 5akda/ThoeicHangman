@@ -16,7 +16,9 @@ import timber.log.Timber
 
 class SplashViewModel(private val databaseService: FirebaseFirestore) : ViewModel() {
 
-    private val animationString = MutableLiveData<String>()
+    val animationString = MutableLiveData<String>()
+    val latestVersion = AppVersionFirestoreData(databaseService)
+    val baseUrl = UrlFirestoreData(databaseService)
 
     init {
         drawAnimation()
@@ -43,8 +45,6 @@ class SplashViewModel(private val databaseService: FirebaseFirestore) : ViewMode
     fun getBaseUrl(): LiveData<String> {
         return UrlFirestoreData(databaseService)
     }
-
-    fun getAnimationString(): LiveData<String> = animationString
 
     private fun drawAnimation() {
         val animations = listOf(

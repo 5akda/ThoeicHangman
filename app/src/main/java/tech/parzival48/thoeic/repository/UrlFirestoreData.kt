@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import com.google.firebase.firestore.*
 import timber.log.Timber
 
-class UrlFirestoreData(databaseService: FirebaseFirestore) : LiveData<String>() {
+class UrlFirestoreData(firestoreService: FirebaseFirestore) : LiveData<String>() {
 
 	private var registration: ListenerRegistration? = null
-	private val docReference = databaseService.collection("api").document("url")
+	private val docReference = firestoreService.collection("api").document("url")
 
 	override fun onActive() {
 		super.onActive()
