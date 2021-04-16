@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">THOEIC Hangman</string>
+    <string name="thoeic">THOEIC</string>
+    <string name="hangmanLoad0">_ _ _ _ _ _ _</string>
+    <string name="parzival48">parzival48</string>
+    <string name="startGame">START &#128640;</string>
+    <string name="vocabulary">&#128209; VOCABULARY</string>
+    <string name="rate">&#11088; RATE APP</string>
+    <string name="about">&#127759; ABOUT</string>
+</resources>

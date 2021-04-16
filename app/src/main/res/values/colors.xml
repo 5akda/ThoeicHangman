@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#93CD69</color>
+	<color name="colorPrimaryDark">#20A309</color>
+	<color name="chalkWhite">#EEEEEEEE</color>
+	<color name="chalkYellow">#EEFBE377</color>
+	<color name="chalkPink">#EEFF7979</color>
+	<color name="chalkBlue">#EE92BEF3</color>
+	<color name="colorAccent">#00EEEE</color>
+	<color name="blackBoard">#032B14</color>
+	<color name="transparent">#00000000</color>
+	<color name="black">#000000</color>
+	<color name="textShadow">#7F000000</color>
+	<color name="white">#FFFFFF</color>
+</resources>
