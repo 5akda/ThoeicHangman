@@ -1,0 +1,187 @@
+{
+  "content": [
+    {
+      "english": "offer",
+      "meaning": "ข้อเสนอ",
+      "part_of_speech": "n.",
+      "synonym": "proposal"
+    },
+    {
+      "english": "omit",
+      "meaning": "ละไว้",
+      "part_of_speech": "v.",
+      "synonym": "skip"
+    },
+    {
+      "english": "opposition",
+      "meaning": "ความขัดแย้ง",
+      "part_of_speech": "n.",
+      "synonym": "conflict"
+    },
+    {
+      "english": "orientation",
+      "meaning": "ปฐมนิเทศ",
+      "part_of_speech": "n.",
+      "synonym": "introduction"
+    },
+    {
+      "english": "outdated",
+      "meaning": "ล้าสมัย",
+      "part_of_speech": "adj.",
+      "synonym": "obsolete"
+    },
+    {
+      "english": "permit",
+      "meaning": "อนุญาต",
+      "part_of_speech": "v.",
+      "synonym": "authorize"
+    },
+    {
+      "english": "personal",
+      "meaning": "ส่วนบุคคล",
+      "part_of_speech": "adj.",
+      "synonym": "individual"
+    },
+    {
+      "english": "precipitous",
+      "meaning": "ชัน",
+      "part_of_speech": "adj.",
+      "synonym": "steep"
+    },
+    {
+      "english": "primarily",
+      "meaning": "โดยส่วนมาก",
+      "part_of_speech": "adv.",
+      "synonym": "generally"
+    },
+    {
+      "english": "productive",
+      "meaning": "มีประสิทธิภาพ",
+      "part_of_speech": "adj.",
+      "synonym": "effective"
+    },
+    {
+      "english": "rapidly",
+      "meaning": "อย่างรวดเร็ว",
+      "part_of_speech": "adv.",
+      "synonym": "fast"
+    },
+    {
+      "english": "region",
+      "meaning": "ภูมิภาค",
+      "part_of_speech": "n.",
+      "synonym": "area"
+    },
+    {
+      "english": "reimbursement",
+      "meaning": "การชำระเงินคืน",
+      "part_of_speech": "n.",
+      "synonym": "compensation"
+    },
+    {
+      "english": "reluctant",
+      "meaning": "ไม่เต็มใจ",
+      "part_of_speech": "adj.",
+      "synonym": "unwilling"
+    },
+    {
+      "english": "renovate",
+      "meaning": "ซ่อมแซม",
+      "part_of_speech": "v.",
+      "synonym": "repair"
+    },
+    {
+      "english": "renowned",
+      "meaning": "มีชื่อเสียง",
+      "part_of_speech": "adj.",
+      "synonym": "famous"
+    },
+    {
+      "english": "reputation",
+      "meaning": "ชื่อเสียง",
+      "part_of_speech": "n.",
+      "synonym": "fame"
+    },
+    {
+      "english": "resolve",
+      "meaning": "แก้ไขปัญหา",
+      "part_of_speech": "v.",
+      "synonym": "fix"
+    },
+    {
+      "english": "revenue",
+      "meaning": "รายได้",
+      "part_of_speech": "n.",
+      "synonym": "income"
+    },
+    {
+      "english": "satisfaction",
+      "meaning": "ความพึงพอใจ",
+      "part_of_speech": "n.",
+      "synonym": "contentment"
+    },
+    {
+      "english": "short",
+      "meaning": "ขาด",
+      "part_of_speech": "adj.",
+      "synonym": "lacking"
+    },
+    {
+      "english": "soaring",
+      "meaning": "ทยานขึ้น",
+      "part_of_speech": "adj.",
+      "synonym": "elevated"
+    },
+    {
+      "english": "specific",
+      "meaning": "เฉพาะเจาะจง",
+      "part_of_speech": "adj.",
+      "synonym": "particular"
+    },
+    {
+      "english": "strategy",
+      "meaning": "กลยุทธ์",
+      "part_of_speech": "n.",
+      "synonym": "planning"
+    },
+    {
+      "english": "substitution",
+      "meaning": "การแทนที่",
+      "part_of_speech": "n.",
+      "synonym": "replacement"
+    },
+    {
+      "english": "task",
+      "meaning": "ภารกิจ",
+      "part_of_speech": "n.",
+      "synonym": "mission"
+    },
+    {
+      "english": "temporary",
+      "meaning": "ชั่วคราว",
+      "part_of_speech": "adj.",
+      "synonym": "provisional"
+    },
+    {
+      "english": "unveil",
+      "meaning": "เปิดเผย",
+      "part_of_speech": "v.",
+      "synonym": "reveal"
+    },
+    {
+      "english": "urgent",
+      "meaning": "เร่งด่วน",
+      "part_of_speech": "adj.",
+      "synonym": "quick"
+    },
+    {
+      "english": "versatile",
+      "meaning": "อเนกประสงค์",
+      "part_of_speech": "adj.",
+      "synonym": "multipurpose"
+    }
+  ],
+  "page_number": 3,
+  "size": 30,
+  "total_page": 4
+}

@@ -10,6 +10,6 @@ data class Word(
     val meaning: String,
     @SerializedName("part_of_speech")
     val partOfSpeech: String,
-    @SerializedName("category")
-    val category: Int
+    @SerializedName("synonym")
+    val synonym: String
 )

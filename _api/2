@@ -1,0 +1,187 @@
+{
+  "content": [
+    {
+      "english": "beverage",
+      "meaning": "เครื่องดื่ม",
+      "part_of_speech": "n.",
+      "synonym": "drinks"
+    },
+    {
+      "english": "calculate",
+      "meaning": "คำนวณ",
+      "part_of_speech": "v.",
+      "synonym": "compute"
+    },
+    {
+      "english": "candidate",
+      "meaning": "ผู้เข้าแข่งขัน",
+      "part_of_speech": "n.",
+      "synonym": "competitor"
+    },
+    {
+      "english": "capacity",
+      "meaning": "ความจุ",
+      "part_of_speech": "n.",
+      "synonym": "size"
+    },
+    {
+      "english": "casually",
+      "meaning": "อย่างไม่เป็นทางการ",
+      "part_of_speech": "adv.",
+      "synonym": "informally"
+    },
+    {
+      "english": "charity",
+      "meaning": "การกุศล",
+      "part_of_speech": "n.",
+      "synonym": "donation"
+    },
+    {
+      "english": "client",
+      "meaning": "ลูกค้า",
+      "part_of_speech": "n.",
+      "synonym": "customer"
+    },
+    {
+      "english": "collaborate",
+      "meaning": "ร่วมมือ",
+      "part_of_speech": "v.",
+      "synonym": "cooperate"
+    },
+    {
+      "english": "commercial",
+      "meaning": "โฆษณา",
+      "part_of_speech": "n.",
+      "synonym": "advertisement"
+    },
+    {
+      "english": "commit",
+      "meaning": "สัญญา",
+      "part_of_speech": "v.",
+      "synonym": "promise"
+    },
+    {
+      "english": "compatible",
+      "meaning": "เข้ากันได้",
+      "part_of_speech": "adj.",
+      "synonym": "suitable"
+    },
+    {
+      "english": "compromise",
+      "meaning": "ประนีประนอม",
+      "part_of_speech": "v.",
+      "synonym": "negotiate"
+    },
+    {
+      "english": "concerned",
+      "meaning": "กังวล",
+      "part_of_speech": "adj.",
+      "synonym": "worried"
+    },
+    {
+      "english": "conduct",
+      "meaning": "ควบคุม",
+      "part_of_speech": "v.",
+      "synonym": "direct"
+    },
+    {
+      "english": "consequence",
+      "meaning": "ผลลัพธ์",
+      "part_of_speech": "n.",
+      "synonym": "outcome"
+    },
+    {
+      "english": "considerably",
+      "meaning": "อย่างมาก",
+      "part_of_speech": "adv.",
+      "synonym": "significantly"
+    },
+    {
+      "english": "convenient",
+      "meaning": "สะดวกสบาย",
+      "part_of_speech": "adj.",
+      "synonym": "handy"
+    },
+    {
+      "english": "convince",
+      "meaning": "โน้มน้าว",
+      "part_of_speech": "v.",
+      "synonym": "persuade"
+    },
+    {
+      "english": "correspondence",
+      "meaning": "จดหมายข่าว",
+      "part_of_speech": "n.",
+      "synonym": "letters"
+    },
+    {
+      "english": "courteous",
+      "meaning": "สุภาพนอบน้อม",
+      "part_of_speech": "adj.",
+      "synonym": "gentle"
+    },
+    {
+      "english": "current",
+      "meaning": "เป็นปัจจุบัน",
+      "part_of_speech": "adj.",
+      "synonym": "present"
+    },
+    {
+      "english": "customize",
+      "meaning": "ปรับตามความต้องการ",
+      "part_of_speech": "v.",
+      "synonym": "personalize"
+    },
+    {
+      "english": "debt",
+      "meaning": "หนี้สิน",
+      "part_of_speech": "n.",
+      "synonym": "liability"
+    },
+    {
+      "english": "declare",
+      "meaning": "ประกาศ",
+      "part_of_speech": "v.",
+      "synonym": "announce"
+    },
+    {
+      "english": "deduct",
+      "meaning": "หักออก",
+      "part_of_speech": "v.",
+      "synonym": "reduce"
+    },
+    {
+      "english": "deficit",
+      "meaning": "การขาดดุล",
+      "part_of_speech": "n.",
+      "synonym": "loss"
+    },
+    {
+      "english": "demonstrate",
+      "meaning": "สาธิต",
+      "part_of_speech": "v.",
+      "synonym": "show"
+    },
+    {
+      "english": "dependable",
+      "meaning": "พึ่งพาได้",
+      "part_of_speech": "adj.",
+      "synonym": "trustworthy"
+    },
+    {
+      "english": "describe",
+      "meaning": "อธิบาย",
+      "part_of_speech": "v.",
+      "synonym": "explain"
+    },
+    {
+      "english": "determine",
+      "meaning": "ตัดสินใจ",
+      "part_of_speech": "v.",
+      "synonym": "decide"
+    }
+  ],
+  "page_number": 2,
+  "size": 30,
+  "total_page": 4
+}

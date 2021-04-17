@@ -1,0 +1,187 @@
+{
+  "content": [
+    {
+      "english": "accidental",
+      "meaning": "โดยบังเอิญ",
+      "part_of_speech": "adj.",
+      "synonym": "coincidental"
+    },
+    {
+      "english": "activate",
+      "meaning": "กระตุ้น",
+      "part_of_speech": "v.",
+      "synonym": "stimulate"
+    },
+    {
+      "english": "acutely",
+      "meaning": "อย่างมีไหวพริบ",
+      "part_of_speech": "adv.",
+      "synonym": "sharply"
+    },
+    {
+      "english": "additional",
+      "meaning": "ที่เพิ่มขึ้นมา",
+      "part_of_speech": "adj.",
+      "synonym": "extra"
+    },
+    {
+      "english": "advance",
+      "meaning": "ก้าวหน้า",
+      "part_of_speech": "v.",
+      "synonym": "progress"
+    },
+    {
+      "english": "affirmation",
+      "meaning": "การยืนยัน",
+      "part_of_speech": "n.",
+      "synonym": "insistence"
+    },
+    {
+      "english": "affordable",
+      "meaning": "ราคาจับต้องได้",
+      "part_of_speech": "adj.",
+      "synonym": "low-cost"
+    },
+    {
+      "english": "aisle",
+      "meaning": "ทางเดินระหว่างที่นั่ง",
+      "part_of_speech": "n.",
+      "synonym": "passageway"
+    },
+    {
+      "english": "allocate",
+      "meaning": "จัดสรร",
+      "part_of_speech": "v.",
+      "synonym": "assign"
+    },
+    {
+      "english": "alter",
+      "meaning": "ปรับเปลี่ยน",
+      "part_of_speech": "v.",
+      "synonym": "adjust"
+    },
+    {
+      "english": "alternative",
+      "meaning": "ทางเลือก",
+      "part_of_speech": "n.",
+      "synonym": "option"
+    },
+    {
+      "english": "although",
+      "meaning": "แม้ว่า",
+      "part_of_speech": "conj.",
+      "synonym": "though"
+    },
+    {
+      "english": "amateur",
+      "meaning": "มือสมัครเล่น",
+      "part_of_speech": "n.",
+      "synonym": "beginner"
+    },
+    {
+      "english": "announcement",
+      "meaning": "ประกาศ",
+      "part_of_speech": "n.",
+      "synonym": "broadcast"
+    },
+    {
+      "english": "annual",
+      "meaning": "ประจำปี",
+      "part_of_speech": "adj.",
+      "synonym": "anniversary"
+    },
+    {
+      "english": "appliance",
+      "meaning": "เครื่องใช้",
+      "part_of_speech": "n.",
+      "synonym": "machine"
+    },
+    {
+      "english": "arrive",
+      "meaning": "มาถึง",
+      "part_of_speech": "v.",
+      "synonym": "reach"
+    },
+    {
+      "english": "assemble",
+      "meaning": "รวมตัวกัน",
+      "part_of_speech": "v.",
+      "synonym": "gather"
+    },
+    {
+      "english": "assistant",
+      "meaning": "ผู้ช่วย",
+      "part_of_speech": "n.",
+      "synonym": "helper"
+    },
+    {
+      "english": "association",
+      "meaning": "สมาคม",
+      "part_of_speech": "n.",
+      "synonym": "organization"
+    },
+    {
+      "english": "assume",
+      "meaning": "สันนิษฐาน",
+      "part_of_speech": "v.",
+      "synonym": "suppose"
+    },
+    {
+      "english": "atmosphere",
+      "meaning": "บรรยากาศ",
+      "part_of_speech": "n.",
+      "synonym": "environment"
+    },
+    {
+      "english": "attract",
+      "meaning": "ดึงดูดใจ",
+      "part_of_speech": "v.",
+      "synonym": "allure"
+    },
+    {
+      "english": "attribute",
+      "meaning": "คุณสมบัติ",
+      "part_of_speech": "n.",
+      "synonym": "characteristic"
+    },
+    {
+      "english": "audience",
+      "meaning": "ผู้ชม",
+      "part_of_speech": "n.",
+      "synonym": "spectators"
+    },
+    {
+      "english": "audit",
+      "meaning": "การตรวจสอบบัญชี",
+      "part_of_speech": "n.",
+      "synonym": "examination"
+    },
+    {
+      "english": "aware",
+      "meaning": "ที่ตระหนักรู้",
+      "part_of_speech": "adj.",
+      "synonym": "awake"
+    },
+    {
+      "english": "baggage",
+      "meaning": "สัมภาระ",
+      "part_of_speech": "n.",
+      "synonym": "luggage"
+    },
+    {
+      "english": "banquet",
+      "meaning": "งานเลี้ยงรื่นเริง",
+      "part_of_speech": "n.",
+      "synonym": "feast"
+    },
+    {
+      "english": "bargain",
+      "meaning": "ต่อรอง",
+      "part_of_speech": "v.",
+      "synonym": "compromise"
+    }
+  ],
+  "page_number": 1,
+  "size": 30,
+  "total_pages": 4
+}

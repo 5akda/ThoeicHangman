@@ -7,7 +7,8 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import tech.parzival48.thoeic.network.NetworkProvider
-import tech.parzival48.thoeic.network.ApiService
+import tech.parzival48.thoeic.network.VocabApiService
+import tech.parzival48.thoeic.network.WordApiService
 import tech.parzival48.thoeic.ui.game.GameViewModel
 import tech.parzival48.thoeic.ui.splash.SplashViewModel
 import timber.log.Timber
@@ -15,10 +16,16 @@ import timber.log.Timber
 class ThoeicHangmanApp : Application() {
 
     private val networkModule = module {
+
+        // Firebase Firestore
         single { NetworkProvider.getFirestore() }
 
-        single { NetworkProvider.getRetrofit() }
-        factory { ApiService.create(get()) }
+        // Retrofit RTDB
+        single { NetworkProvider.getFirebaseRetrofit()}
+        factory { WordApiService.create(get()) }
+
+        // Retrofit Github
+        factory { VocabApiService.create(NetworkProvider.getGithubRetrofit()) }
     }
 
     private val viewModelModule = module {

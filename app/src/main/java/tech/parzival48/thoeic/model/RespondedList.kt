@@ -7,6 +7,8 @@ data class RespondedList<T>(
     val size: Int,
     @SerializedName("page_number")
     val pageNumber: Int,
+    @SerializedName("total_page")
+    val totalPage: Int,
     @SerializedName("content")
     val content: List<T>
 )

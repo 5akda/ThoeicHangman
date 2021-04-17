@@ -11,16 +11,26 @@ import timber.log.Timber
 
 object NetworkProvider {
 
+    private const val GITHUB_URL = "https://raw.githubusercontent.com/parzival48/ThoeicHangman/main/_api/"
     private var mApiUrl = "https://raw.githubusercontent.com/parzival48/ThoeicHangman/main/_api/"
 
     fun setApiUrl(apiUrl: String) {
         mApiUrl = apiUrl
     }
 
-    fun getRetrofit(): Retrofit {
+    fun getFirebaseRetrofit(): Retrofit {
         Timber.d("Retrofit Base URL: %s", mApiUrl)
         return Retrofit.Builder()
             .baseUrl(mApiUrl)
+            .client(getOkHttpClient())
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    fun getGithubRetrofit(): Retrofit {
+        Timber.d("Retrofit Base URL: %s", mApiUrl)
+        return Retrofit.Builder()
+            .baseUrl(GITHUB_URL)
             .client(getOkHttpClient())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
