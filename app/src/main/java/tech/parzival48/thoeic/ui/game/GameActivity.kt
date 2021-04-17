@@ -5,13 +5,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.parzival48.thoeic.databinding.ActivityFragmentContainerBinding
+import timber.log.Timber
 
 class GameActivity : AppCompatActivity() {
 
     private val binding: ActivityFragmentContainerBinding by lazy {
         ActivityFragmentContainerBinding.inflate(layoutInflater)
     }
+
+    private val viewModel: GameViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
