@@ -22,11 +22,14 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        binding.let {
-            it.btnStartGame.setOnClickListener(OnStartClickListener())
-            it.btnVocab.setOnClickListener(OnVocabClickListener())
-            it.btnAbout.setOnClickListener(OnAboutClickListener())
-            it.btnRate.setOnClickListener(OnRateClickListener())
+        with(binding) {
+            btnStartGame.setOnClickListener(OnStartClickListener())
+            btnVocab.setOnClickListener(OnVocabClickListener())
+            btnAbout.setOnClickListener(OnAboutClickListener())
+            btnRate.setOnClickListener(OnRateClickListener())
+
+            /* TEMP FOR 1.0 ONLY */
+            btnRate.visibility = View.GONE
         }
     }
 
@@ -38,7 +41,6 @@ class HomeFragment : Fragment() {
 
     private inner class OnVocabClickListener : View.OnClickListener {
         override fun onClick(v: View?) {
-
         }
     }
 

@@ -3,6 +3,7 @@ package tech.parzival48.thoeic.ui.splash
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
@@ -11,11 +12,11 @@ import android.provider.Settings
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.parzival48.thoeic.BuildConfig
 import tech.parzival48.thoeic.databinding.ActivitySplashBinding
 import tech.parzival48.thoeic.network.NetworkProvider
-import tech.parzival48.thoeic.ui.component.SnackbarMaker
 import tech.parzival48.thoeic.ui.home.HomeActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -38,7 +39,7 @@ class SplashActivity : AppCompatActivity() {
 
 	override fun onResume() {
 		super.onResume()
-		checkAppVersion()
+		checkServer()
 	}
 
     override fun onBackPressed() {
@@ -46,7 +47,7 @@ class SplashActivity : AppCompatActivity() {
         backPressed = true
     }
 
-	private fun checkAppVersion() {
+	private fun checkServer() {
 		val cm = applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE)
 		if (viewModel.hasInternetConnection(cm as ConnectivityManager)) {
 			subscribeNewerUpdate()
@@ -79,13 +80,7 @@ class SplashActivity : AppCompatActivity() {
 	private fun subscribeNewerUpdate() {
 		viewModel.latestVersion.observe(this, {
 			if(it != BuildConfig.VERSION_NAME) {
-				SnackbarMaker.show(
-						binding.root,
-						"Newer version is available!",
-						"Update",
-						OnUpdateClickListener(),
-						SnackbarMaker.TEMP
-				)
+				//showUpdateSnackbar()
 			}
 		})
 	}
@@ -95,6 +90,15 @@ class SplashActivity : AppCompatActivity() {
 			NetworkProvider.setApiUrl(it)
 			redirectToHomeActivity()
 		})
+	}
+
+	private fun showUpdateSnackbar() {
+		Snackbar.make(binding.root, "เกมนี้มีเวอร์ชั่นใหม่ออกแล้วนะ", Snackbar.LENGTH_LONG)
+			.setAction("อัพเดท!", OnUpdateClickListener())
+			.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
+			.setBackgroundTint(Color.parseColor("#eeeeee"))
+			.setTextColor(Color.parseColor("#300303"))
+			.show()
 	}
 
 	private inner class OnExitClickListener : DialogInterface.OnClickListener {

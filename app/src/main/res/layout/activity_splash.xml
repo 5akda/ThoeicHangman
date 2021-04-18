@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/black"
+    android:background="@color/darkGray"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.splash.SplashActivity">
@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="90dp"
         android:id="@+id/txtThoeic"
         android:textColor="@color/colorPrimaryDark"
         android:text="@string/thoeic"
@@ -36,6 +36,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtThoeic"
         tools:text="H A _ _ _ A _"/>
+
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar"
+        app:layout_constraintTop_toBottomOf="@id/txtHangman"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="70dp"
+        android:indeterminateTint="@color/chalkBlue"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

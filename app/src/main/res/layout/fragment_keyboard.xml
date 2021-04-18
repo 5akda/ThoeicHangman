@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="24dp"
+    android:paddingBottom="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/keyAG"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="3dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/btnA" style="@style/Alphabets"
+            android:text="@string/A"/>
+        <TextView android:id="@+id/btnB" style="@style/Alphabets"
+            android:text="@string/B"/>
+        <TextView android:id="@+id/btnC" style="@style/Alphabets"
+            android:text="@string/C"/>
+        <TextView android:id="@+id/btnD" style="@style/Alphabets"
+            android:text="@string/D"/>
+        <TextView android:id="@+id/btnE" style="@style/Alphabets"
+            android:text="@string/E"/>
+        <TextView android:id="@+id/btnF" style="@style/Alphabets"
+            android:text="@string/F"/>
+        <TextView android:id="@+id/btnG" style="@style/Alphabets"
+            android:text="@string/G"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keyHN"
+        app:layout_constraintTop_toBottomOf="@id/keyAG"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="3dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/btnH" style="@style/Alphabets"
+            android:text="@string/H"/>
+        <TextView android:id="@+id/btnI" style="@style/Alphabets"
+            android:text="@string/I"/>
+        <TextView android:id="@+id/btnJ" style="@style/Alphabets"
+            android:text="@string/J"/>
+        <TextView android:id="@+id/btnK" style="@style/Alphabets"
+            android:text="@string/K"/>
+        <TextView android:id="@+id/btnL" style="@style/Alphabets"
+            android:text="@string/L"/>
+        <TextView android:id="@+id/btnM" style="@style/Alphabets"
+            android:text="@string/M"/>
+        <TextView android:id="@+id/btnN" style="@style/Alphabets"
+            android:text="@string/N"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keyOU"
+        app:layout_constraintTop_toBottomOf="@id/keyHN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="3dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/btnO" style="@style/Alphabets"
+            android:text="@string/O"/>
+        <TextView android:id="@+id/btnP" style="@style/Alphabets"
+            android:text="@string/P"/>
+        <TextView android:id="@+id/btnQ" style="@style/Alphabets"
+            android:text="@string/Q"/>
+        <TextView android:id="@+id/btnR" style="@style/Alphabets"
+            android:text="@string/R"/>
+        <TextView android:id="@+id/btnS" style="@style/Alphabets"
+            android:text="@string/S"/>
+        <TextView android:id="@+id/btnT" style="@style/Alphabets"
+            android:text="@string/T"/>
+        <TextView android:id="@+id/btnU" style="@style/Alphabets"
+            android:text="@string/U"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keyVZ"
+        app:layout_constraintTop_toBottomOf="@id/keyOU"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="3dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/btnV" style="@style/Alphabets"
+            android:text="@string/V"/>
+        <TextView android:id="@+id/btnW" style="@style/Alphabets"
+            android:text="@string/W"/>
+        <TextView android:id="@+id/btnX" style="@style/Alphabets"
+            android:text="@string/X"/>
+        <TextView android:id="@+id/btnY" style="@style/Alphabets"
+            android:text="@string/Y"/>
+        <TextView android:id="@+id/btnZ" style="@style/Alphabets"
+            android:text="@string/Z"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

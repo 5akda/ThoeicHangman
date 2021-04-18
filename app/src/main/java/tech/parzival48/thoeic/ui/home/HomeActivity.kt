@@ -2,14 +2,15 @@ package tech.parzival48.thoeic.ui.home
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
+import com.google.android.material.snackbar.Snackbar
 import tech.parzival48.thoeic.databinding.ActivityFragmentContainerBinding
-import tech.parzival48.thoeic.ui.component.SnackbarMaker
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : FragmentActivity() {
 
     private val binding: ActivityFragmentContainerBinding by lazy {
         ActivityFragmentContainerBinding.inflate(layoutInflater)
@@ -19,8 +20,10 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //overridePendingTransition(R.anim.fadein, R.anim.fadeout)
         setContentView(binding.root)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+
         if(savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .add(binding.fragmentLayout.id, HomeFragment())
@@ -34,12 +37,16 @@ class HomeActivity : AppCompatActivity() {
             return
         }
         doubleBackPressedOnce = true
-        SnackbarMaker.show(
-            binding.root,
-            "Click BACK again to exit",
-            SnackbarMaker.TEMP
-        )
+        showBackSnackbar()
         Handler().postDelayed({ doubleBackPressedOnce = false }, 2500)
+    }
+
+    private fun showBackSnackbar() {
+        Snackbar.make(binding.root, "กด Back อีกครั้งเพื่อออกจากเกม", Snackbar.LENGTH_LONG)
+            .setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
+            .setBackgroundTint(Color.parseColor("#eeeeee"))
+            .setTextColor(Color.parseColor("#300303"))
+            .show()
     }
 
     companion object {
