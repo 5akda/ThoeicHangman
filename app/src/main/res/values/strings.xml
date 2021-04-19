@@ -35,7 +35,10 @@
     <string name="Z">Z</string>
     <string name="loading">LOADING</string>
     <string name="great">Great &#128077;</string>
-    <string name="findSynonym">คำใดมีความหมายใกล้เคียงกับคำนี้มากที่สุด</string>
+    <string name="findSynonym">คำใดมีความหมายใกล้เคียง \n คำนี้มากที่สุด?</string>
     <string name="partOfSpeech">( %1$s )</string>
+    <string name="playAgain">PLAY AGAIN &#128640;</string>
+    <string name="wrong">ยังไม่ถูกต้อง\nลองดูอีกครั้ง</string>
+    <string name="excellent">Excellent &#128079;</string>
 
 </resources>

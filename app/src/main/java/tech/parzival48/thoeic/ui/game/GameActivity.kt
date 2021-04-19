@@ -12,7 +12,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.parzival48.thoeic.R
 import tech.parzival48.thoeic.databinding.ActivityGameBinding
 import tech.parzival48.thoeic.model.Word
-import tech.parzival48.thoeic.ui.home.HomeFragment
 import java.util.*
 
 class GameActivity : AppCompatActivity() {
@@ -25,7 +24,7 @@ class GameActivity : AppCompatActivity() {
 
     private var doubleBackPressedOnce = false
 
-    private lateinit var wordList: List<Word>
+    private lateinit var quizWord: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,14 +53,15 @@ class GameActivity : AppCompatActivity() {
     private fun subscribeLiveData() {
 
         viewModel.words.observe(this, {
-            wordList = it
-            viewModel.initDisplayString(wordList[0].english)
+            quizWord = it[0].english
+            viewModel.initDisplayString(quizWord)
             hideLoading()
         })
 
         viewModel.displayString.observe(this, {
             binding.txtDisplay.text = it
-            if(it == wordList[0].english.toUpperCase(Locale.ROOT)) {
+            if(it == quizWord.toUpperCase(Locale.ROOT)) {
+                binding.txtDisplay.setTextColor(getColor(R.color.chalkYellow))
                 gameEnding(true)
             }
         })
@@ -77,6 +77,7 @@ class GameActivity : AppCompatActivity() {
 
     private fun gameEnding(success: Boolean) {
         if(success) {
+            binding.txtDisplay.text = ""
             binding.successLayout.visibility = View.VISIBLE
         } else {
 

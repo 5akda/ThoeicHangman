@@ -14,8 +14,10 @@
 	<color name="white">#FFFFFF</color>
 	<!--color name="darkGray">#0F1619</color-->
 	<color name="darkGray">#1A2329</color>
-	<color name="alphabet">#58BC46</color>
+	<color name="correct">#5BAC4C</color>
+	<color name="incorrect">#AC484B</color>
 	<color name="clickedBtnAlphabet">#1B1410</color>
 	<color name="darkGrayTrans">#E1182127</color>
 	<color name="whiteTrans">#88FFFFFF</color>
+	<color name="cyan">#377873</color>
 </resources>
