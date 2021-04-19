@@ -6,15 +6,6 @@
 	android:layout_height="match_parent"
 	android:background="@drawable/main_app_background">
 
-	<ImageView
-		tools:src="@drawable/hangman_0"
-		android:alpha="0.6"
-		android:id="@+id/imgHangman"
-		android:layout_marginBottom="24dp"
-		android:layout_width="match_parent"
-		android:layout_height="200dp"
-		app:layout_constraintBottom_toTopOf="@id/txtDisplay"/>
-
 	<FrameLayout
 		android:id="@+id/keyboardLayout"
 		android:layout_width="match_parent"
@@ -37,6 +28,17 @@
 		android:background="@color/darkGrayTrans"
 		android:visibility="gone"
 		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:id="@+id/imgHangman"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="24dp"
+		android:layout_marginTop="18dp"
+		android:alpha="0.6"
+		app:layout_constraintBottom_toTopOf="@id/txtDisplay"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:src="@drawable/hangman_0" />
 
 	<TextView
 		android:id="@+id/txtDisplay"

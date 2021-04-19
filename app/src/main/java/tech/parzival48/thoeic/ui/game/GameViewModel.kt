@@ -4,11 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import tech.parzival48.thoeic.model.Word
 import tech.parzival48.thoeic.network.WordApiService
 import tech.parzival48.thoeic.repository.WordDataSource
-import timber.log.Timber
 import java.util.*
 
 class GameViewModel(apiService: WordApiService) : ViewModel() {

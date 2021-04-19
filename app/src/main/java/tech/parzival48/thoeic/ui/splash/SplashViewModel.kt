@@ -2,7 +2,6 @@ package tech.parzival48.thoeic.ui.splash
 
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

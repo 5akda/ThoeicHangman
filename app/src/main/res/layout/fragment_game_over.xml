@@ -6,11 +6,11 @@
 	android:layout_height="match_parent">
 
 	<LinearLayout
-		android:orientation="horizontal"
 		android:layout_width="match_parent"
 		android:layout_height="4dp"
 		android:layout_margin="16dp"
 		android:background="@color/chalkBlue"
+		android:orientation="horizontal"
 		app:layout_constraintTop_toBottomOf="@id/txtGreat" />
 
 	<LinearLayout
@@ -19,8 +19,8 @@
 		android:layout_height="4dp"
 		android:layout_margin="16dp"
 		android:background="@color/chalkBlue"
-		app:layout_constraintTop_toBottomOf="@id/txtPartOfSpeech"
-		android:orientation="horizontal" />
+		android:orientation="horizontal"
+		app:layout_constraintTop_toBottomOf="@id/txtPartOfSpeech" />
 
 	<TextView
 		android:id="@+id/txtEnglish"
@@ -73,9 +73,9 @@
 
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:id="@+id/endingLayout"
-		app:layout_constraintTop_toBottomOf="@id/secondBar"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="wrap_content"
+		app:layout_constraintTop_toBottomOf="@id/secondBar">
 
 		<TextView
 			android:id="@+id/txtInstruction"
@@ -90,9 +90,9 @@
 
 		<TextView
 			android:id="@+id/btnPlayAgain"
-			android:layout_marginTop="80dp"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:layout_marginTop="80dp"
 			android:fontFamily="casual"
 			android:shadowColor="@color/textShadow"
 			android:shadowDx="5"
@@ -102,12 +102,11 @@
 			android:textColor="@color/chalkPink"
 			android:textSize="36sp"
 			android:textStyle="bold"
-			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@id/txtInstruction" />
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
