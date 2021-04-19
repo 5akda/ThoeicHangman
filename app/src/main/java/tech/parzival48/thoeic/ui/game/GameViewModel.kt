@@ -16,7 +16,6 @@ class GameViewModel(apiService: WordApiService) : ViewModel() {
 	val words = MutableLiveData<List<Word>>()
 	val displayString = MutableLiveData<String>()
 	val numOfAttempts = MutableLiveData<Int>()
-	private val MAX_ATTEMPTS = 8
 	private val wordDataSource = WordDataSource(apiService)
 
 	init {
@@ -28,14 +27,17 @@ class GameViewModel(apiService: WordApiService) : ViewModel() {
 
 	fun guessAlphabet(char: Char) {
 		var temp = displayString.value
+		var existed = false
 		words.value?.get(0)?.english?.toUpperCase(Locale.ROOT)?.let {
 			for(i in it.indices) {
 				if(it[i] == char) {
 					temp = temp?.substring(0, i) + char + temp?.substring(i+1)
-				} else {
-					numOfAttempts.postValue(numOfAttempts.value?.plus(1))
+					existed = true
 				}
 			}
+		}
+		if(!existed) {
+			numOfAttempts.value = numOfAttempts.value?.plus(1)
 		}
 		displayString.postValue(temp?:"Error")
 	}

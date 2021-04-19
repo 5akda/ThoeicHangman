@@ -11,7 +11,6 @@ import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.parzival48.thoeic.R
 import tech.parzival48.thoeic.databinding.ActivityGameBinding
-import tech.parzival48.thoeic.model.Word
 import java.util.*
 
 class GameActivity : AppCompatActivity() {
@@ -24,6 +23,8 @@ class GameActivity : AppCompatActivity() {
 
     private var doubleBackPressedOnce = false
 
+    private val MAX_ATTEMPTS = 8
+
     private lateinit var quizWord: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +36,7 @@ class GameActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                 .add(binding.keyboardLayout.id, KeyboardFragment())
                 .add(binding.successLayout.id, SuccessFragment())
+                .add(binding.gameOverLayout.id, OverFragment())
                 .commit()
         }
         subscribeLiveData()
@@ -61,8 +63,13 @@ class GameActivity : AppCompatActivity() {
         viewModel.displayString.observe(this, {
             binding.txtDisplay.text = it
             if(it == quizWord.toUpperCase(Locale.ROOT)) {
-                binding.txtDisplay.setTextColor(getColor(R.color.chalkYellow))
                 gameEnding(true)
+            }
+        })
+
+        viewModel.numOfAttempts.observe(this, {
+            if(it == MAX_ATTEMPTS) {
+                gameEnding(false)
             }
         })
     }
@@ -76,11 +83,11 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun gameEnding(success: Boolean) {
+        binding.txtDisplay.visibility = View.INVISIBLE
         if(success) {
-            binding.txtDisplay.text = ""
             binding.successLayout.visibility = View.VISIBLE
         } else {
-
+            binding.gameOverLayout.visibility = View.VISIBLE
         }
     }
 
