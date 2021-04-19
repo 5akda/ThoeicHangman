@@ -11,6 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.parzival48.thoeic.R
 import tech.parzival48.thoeic.databinding.ActivityGameBinding
+import tech.parzival48.thoeic.utils.loadFromDrawable
 import java.util.*
 
 class GameActivity : AppCompatActivity() {
@@ -24,6 +25,18 @@ class GameActivity : AppCompatActivity() {
     private var doubleBackPressedOnce = false
 
     private val MAX_ATTEMPTS = 8
+
+    private val hangmanImages = listOf(
+        R.drawable.hangman_0,
+        R.drawable.hangman_1,
+        R.drawable.hangman_2,
+        R.drawable.hangman_3,
+        R.drawable.hangman_4,
+        R.drawable.hangman_5,
+        R.drawable.hangman_6,
+        R.drawable.hangman_7,
+        R.drawable.hangman_8
+    )
 
     private lateinit var quizWord: String
 
@@ -68,6 +81,7 @@ class GameActivity : AppCompatActivity() {
         })
 
         viewModel.numOfAttempts.observe(this, {
+            binding.imgHangman.loadFromDrawable(hangmanImages[it])
             if(it == MAX_ATTEMPTS) {
                 gameEnding(false)
             }
