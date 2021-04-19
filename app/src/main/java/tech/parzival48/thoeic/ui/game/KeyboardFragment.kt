@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.parzival48.thoeic.databinding.FragmentKeyboardBinding
 import timber.log.Timber
 
@@ -17,6 +19,8 @@ class KeyboardFragment : Fragment() {
     private val binding: FragmentKeyboardBinding by lazy {
         FragmentKeyboardBinding.inflate(layoutInflater)
     }
+
+    private val viewModel: GameViewModel by sharedViewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return binding.root
@@ -52,14 +56,15 @@ class KeyboardFragment : Fragment() {
             btnY.setOnClickListener(KeyboardClickListener())
             btnZ.setOnClickListener(KeyboardClickListener())
         }
+
     }
 
     private inner class KeyboardClickListener : View.OnClickListener {
         override fun onClick(v: View?) {
             val btn = v as TextView
-            Timber.d(btn.text.toString())
-            btn.setTextColor(Color.parseColor("#303E2D"))
             btn.isEnabled = false
+            viewModel.guessAlphabet(btn.text.first())
+            btn.setTextColor(Color.parseColor("#252E30"))
         }
     }
 

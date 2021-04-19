@@ -14,7 +14,7 @@ import tech.parzival48.thoeic.repository.AppVersionFirestoreData
 import tech.parzival48.thoeic.repository.UrlFirestoreData
 import timber.log.Timber
 
-class SplashViewModel(private val databaseService: FirebaseFirestore) : ViewModel() {
+class SplashViewModel(databaseService: FirebaseFirestore) : ViewModel() {
 
     val animationString = MutableLiveData<String>()
     val latestVersion = AppVersionFirestoreData(databaseService)
@@ -36,14 +36,6 @@ class SplashViewModel(private val databaseService: FirebaseFirestore) : ViewMode
             }
         }
         return false
-    }
-
-    fun getLatestVersion(): LiveData<String> {
-        return AppVersionFirestoreData(databaseService)
-    }
-
-    fun getBaseUrl(): LiveData<String> {
-        return UrlFirestoreData(databaseService)
     }
 
     private fun drawAnimation() {
