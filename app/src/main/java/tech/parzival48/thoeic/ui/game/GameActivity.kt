@@ -24,7 +24,7 @@ class GameActivity : AppCompatActivity() {
 
     private var doubleBackPressedOnce = false
 
-    private val MAX_ATTEMPTS = 8
+    private val MAX_ATTEMPTS = 9
 
     private val hangmanImages = listOf(
         R.drawable.hangman_0,
@@ -81,9 +81,10 @@ class GameActivity : AppCompatActivity() {
         })
 
         viewModel.numOfAttempts.observe(this, {
-            binding.imgHangman.loadFromDrawable(hangmanImages[it])
             if(it == MAX_ATTEMPTS) {
                 gameEnding(false)
+            } else {
+                binding.imgHangman.loadFromDrawable(hangmanImages[it])
             }
         })
     }
@@ -97,6 +98,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun gameEnding(success: Boolean) {
+        binding.imgHangman.visibility = View.INVISIBLE
         binding.txtDisplay.visibility = View.INVISIBLE
         if(success) {
             binding.successLayout.visibility = View.VISIBLE

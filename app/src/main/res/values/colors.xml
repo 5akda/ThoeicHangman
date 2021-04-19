@@ -17,7 +17,7 @@
 	<color name="correct">#5BAC4C</color>
 	<color name="incorrect">#AC484B</color>
 	<color name="clickedBtnAlphabet">#1B1410</color>
-	<color name="darkGrayTrans">#E1182127</color>
+	<color name="darkGrayTrans">#CE182127</color>
 	<color name="whiteTrans">#88FFFFFF</color>
 	<color name="cyan">#377873</color>
 </resources>

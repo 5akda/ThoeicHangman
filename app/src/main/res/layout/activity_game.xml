@@ -19,7 +19,7 @@
 		android:layout_height="match_parent"
 		android:background="@color/darkGrayTrans"
 		android:visibility="gone"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintBottom_toBottomOf="parent" />
 
 	<FrameLayout
 		android:id="@+id/gameOverLayout"
@@ -27,7 +27,7 @@
 		android:layout_height="match_parent"
 		android:background="@color/darkGrayTrans"
 		android:visibility="gone"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintBottom_toBottomOf="parent" />
 
 	<ImageView
 		android:id="@+id/imgHangman"
