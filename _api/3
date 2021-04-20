@@ -1,187 +1,156 @@
 {
-  "content": [
-    {
-      "english": "discussion",
-      "meaning": "การแลกเปลี่ยนความเห็น",
-      "part_of_speech": "n.",
-      "synonym": "debate"
-    },
-    {
-      "english": "distinct",
-      "meaning": "ชัดเจน",
-      "part_of_speech": "adj.",
-      "synonym": "obvious"
-    },
-    {
-      "english": "distribute",
-      "meaning": "แจกจ่าย",
-      "part_of_speech": "v.",
-      "synonym": "deliver"
-    },
-    {
-      "english": "drastically",
-      "meaning": "อย่างฮวบฮาบ",
-      "part_of_speech": "adv.",
-      "synonym": "greatly"
-    },
-    {
-      "english": "duplicate",
-      "meaning": "ทำซ้ำ",
-      "part_of_speech": "v.",
-      "synonym": "copy"
-    },
-    {
-      "english": "durable",
-      "meaning": "คงทน",
-      "part_of_speech": "adj.",
-      "synonym": "tough"
-    },
-    {
-      "english": "eligible",
-      "meaning": "มีคุณสมบัติเหมาะสม",
-      "part_of_speech": "adj.",
-      "synonym": "qualified"
-    },
-    {
-      "english": "enthusiastic",
-      "meaning": "กระตือรือร้น",
-      "part_of_speech": "adj.",
-      "synonym": "eager"
-    },
-    {
-      "english": "establish",
-      "meaning": "จัดตั้ง",
-      "part_of_speech": "v.",
-      "synonym": "install"
-    },
-    {
-      "english": "evaluate",
-      "meaning": "ประเมิน",
-      "part_of_speech": "v.",
-      "synonym": "appraise"
-    },
-    {
-      "english": "expand",
-      "meaning": "ขยาย",
-      "part_of_speech": "v.",
-      "synonym": "extend"
-    },
-    {
-      "english": "expert",
-      "meaning": "ผู้เชี่ยวชาญ",
-      "part_of_speech": "n.",
-      "synonym": "specialist"
-    },
-    {
-      "english": "facilitate",
-      "meaning": "ทำให้ง่ายขึ้น",
-      "part_of_speech": "v.",
-      "synonym": "aid"
-    },
-    {
-      "english": "flaw",
-      "meaning": "ข้อบกพร่อง",
-      "part_of_speech": "n.",
-      "synonym": "defect"
-    },
-    {
-      "english": "forecast",
-      "meaning": "คาดการณ์ล่วงหน้า",
-      "part_of_speech": "v.",
-      "synonym": "predict"
-    },
-    {
-      "english": "frank",
-      "meaning": "ตรงไปตรงมา",
-      "part_of_speech": "adj.",
-      "synonym": "straightforward"
-    },
-    {
-      "english": "generate",
-      "meaning": "ผลิต",
-      "part_of_speech": "v.",
-      "synonym": "produce"
-    },
-    {
-      "english": "hire",
-      "meaning": "จ้างงาน",
-      "part_of_speech": "v.",
-      "synonym": "employ"
-    },
-    {
-      "english": "impartial",
-      "meaning": "เป็นกลาง",
-      "part_of_speech": "adj.",
-      "synonym": "neutral"
-    },
-    {
-      "english": "inform",
-      "meaning": "แจ้งให้ทราบ",
-      "part_of_speech": "v.",
-      "synonym": "notify"
-    },
-    {
-      "english": "inspection",
-      "meaning": "การตรวจตรา",
-      "part_of_speech": "n.",
-      "synonym": "investigation"
-    },
-    {
-      "english": "instruction",
-      "meaning": "คำแนะนำการใช้งาน",
-      "part_of_speech": "n.",
-      "synonym": "guidance"
-    },
-    {
-      "english": "interfere",
-      "meaning": "แทรกแทรง",
-      "part_of_speech": "v.",
-      "synonym": "meddle"
-    },
-    {
-      "english": "inventory",
-      "meaning": "สินค้าคงคลัง",
-      "part_of_speech": "n.",
-      "synonym": "stock"
-    },
-    {
-      "english": "itinerary",
-      "meaning": "กำหนดการเดินทาง",
-      "part_of_speech": "n.",
-      "synonym": "schedule"
-    },
-    {
-      "english": "jeopardy",
-      "meaning": "อันตราย",
-      "part_of_speech": "n.",
-      "synonym": "danger"
-    },
-    {
-      "english": "merchandise",
-      "meaning": "สินค้า",
-      "part_of_speech": "n.",
-      "synonym": "goods"
-    },
-    {
-      "english": "minimize",
-      "meaning": "ทำให้ลดลง",
-      "part_of_speech": "v.",
-      "synonym": "decrease"
-    },
-    {
-      "english": "obligate",
-      "meaning": "ผูกมัด",
-      "part_of_speech": "v.",
-      "synonym": "bind"
-    },
-    {
-      "english": "obtain",
-      "meaning": "ได้มา",
-      "part_of_speech": "v.",
-      "synonym": "receive"
-    }
-  ],
-  "page_number": 3,
-  "size": 30,
-  "total_page": 4
+  "content" : [ {
+          "english" : "discussion",
+          "meaning" : "การแลกเปลี่ยนความเห็น",
+          "part_of_speech" : "n.",
+          "synonym" : "debate"
+        }, {
+          "english" : "distinct",
+          "meaning" : "ชัดเจน",
+          "part_of_speech" : "adj.",
+          "synonym" : "obvious"
+        }, {
+          "english" : "distribute",
+          "meaning" : "แจกจ่าย",
+          "part_of_speech" : "v.",
+          "synonym" : "deliver"
+        }, {
+          "english" : "drastically",
+          "meaning" : "อย่างฮวบฮาบ",
+          "part_of_speech" : "adv.",
+          "synonym" : "greatly"
+        }, {
+          "english" : "duplicate",
+          "meaning" : "ทำซ้ำ",
+          "part_of_speech" : "v.",
+          "synonym" : "copy"
+        }, {
+          "english" : "durable",
+          "meaning" : "คงทน",
+          "part_of_speech" : "adj.",
+          "synonym" : "tough"
+        }, {
+          "english" : "eligible",
+          "meaning" : "มีคุณสมบัติเหมาะสม",
+          "part_of_speech" : "adj.",
+          "synonym" : "qualified"
+        }, {
+          "english" : "enthusiastic",
+          "meaning" : "กระตือรือร้น",
+          "part_of_speech" : "adj.",
+          "synonym" : "eager"
+        }, {
+          "english" : "establish",
+          "meaning" : "จัดตั้ง",
+          "part_of_speech" : "v.",
+          "synonym" : "install"
+        }, {
+          "english" : "evaluate",
+          "meaning" : "ประเมิน",
+          "part_of_speech" : "v.",
+          "synonym" : "appraise"
+        }, {
+          "english" : "expand",
+          "meaning" : "ขยาย",
+          "part_of_speech" : "v.",
+          "synonym" : "extend"
+        }, {
+          "english" : "expert",
+          "meaning" : "ผู้เชี่ยวชาญ",
+          "part_of_speech" : "n.",
+          "synonym" : "specialist"
+        }, {
+          "english" : "facilitate",
+          "meaning" : "ทำให้ง่ายขึ้น",
+          "part_of_speech" : "v.",
+          "synonym" : "aid"
+        }, {
+          "english" : "flaw",
+          "meaning" : "ข้อบกพร่อง",
+          "part_of_speech" : "n.",
+          "synonym" : "defect"
+        }, {
+          "english" : "forecast",
+          "meaning" : "คาดการณ์ล่วงหน้า",
+          "part_of_speech" : "v.",
+          "synonym" : "predict"
+        }, {
+          "english" : "frank",
+          "meaning" : "ตรงไปตรงมา",
+          "part_of_speech" : "adj.",
+          "synonym" : "straightforward"
+        }, {
+          "english" : "generate",
+          "meaning" : "ผลิต",
+          "part_of_speech" : "v.",
+          "synonym" : "produce"
+        }, {
+          "english" : "hire",
+          "meaning" : "จ้างงาน",
+          "part_of_speech" : "v.",
+          "synonym" : "employ"
+        }, {
+          "english" : "impartial",
+          "meaning" : "เป็นกลาง",
+          "part_of_speech" : "adj.",
+          "synonym" : "neutral"
+        }, {
+          "english" : "inform",
+          "meaning" : "แจ้งให้ทราบ",
+          "part_of_speech" : "v.",
+          "synonym" : "notify"
+        }, {
+          "english" : "inspection",
+          "meaning" : "การตรวจตรา",
+          "part_of_speech" : "n.",
+          "synonym" : "investigation"
+        }, {
+          "english" : "instruction",
+          "meaning" : "คำแนะนำการใช้งาน",
+          "part_of_speech" : "n.",
+          "synonym" : "guidance"
+        }, {
+          "english" : "interfere",
+          "meaning" : "แทรกแทรง",
+          "part_of_speech" : "v.",
+          "synonym" : "meddle"
+        }, {
+          "english" : "inventory",
+          "meaning" : "สินค้าคงคลัง",
+          "part_of_speech" : "n.",
+          "synonym" : "stock"
+        }, {
+          "english" : "itinerary",
+          "meaning" : "กำหนดการเดินทาง",
+          "part_of_speech" : "n.",
+          "synonym" : "schedule"
+        }, {
+          "english" : "jeopardy",
+          "meaning" : "อันตราย",
+          "part_of_speech" : "n.",
+          "synonym" : "danger"
+        }, {
+          "english" : "merchandise",
+          "meaning" : "สินค้า",
+          "part_of_speech" : "n.",
+          "synonym" : "goods"
+        }, {
+          "english" : "minimize",
+          "meaning" : "ทำให้ลดลง",
+          "part_of_speech" : "v.",
+          "synonym" : "decrease"
+        }, {
+          "english" : "obligate",
+          "meaning" : "ผูกมัด",
+          "part_of_speech" : "v.",
+          "synonym" : "bind"
+        }, {
+          "english" : "obtain",
+          "meaning" : "ได้มา",
+          "part_of_speech" : "v.",
+          "synonym" : "receive"
+        } ],
+  "page_number" : 3,
+  "size" : 30,
+  "total_pages" : 4
 }
