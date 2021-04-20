@@ -6,3 +6,6 @@
 <p align="center">
   THOEIC Hangman is a small hangman game based on MVVM architecture.
 </p>
+<p align="center">
+  <img alt="summary" src="https://raw.githubusercontent.com/parzival48/ThoeicHangman/main/preview/summary.png">
+</p>
