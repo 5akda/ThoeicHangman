@@ -98,7 +98,11 @@ class GameActivity : AppCompatActivity() {
 	}
 
 	private fun gameEnding(success: Boolean) {
-		binding.keyboardLayout.visibility = View.GONE
+		with(binding) {
+			keyboardLayout.visibility = View.GONE
+			imgHangman.visibility = View.GONE
+			txtDisplay.visibility = View.GONE
+		}
 		if (success) {
 			binding.successLayout.visibility = View.VISIBLE
 		} else {
