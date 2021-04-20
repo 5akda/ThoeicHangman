@@ -11,10 +11,10 @@ class WordDataSource(private val apiService: WordApiService) {
 		val shuffledPageNum = getShuffledPageNumber()
 		return withContext(Dispatchers.IO) {
 			listOf(
-				apiService.getWord(shuffledPageNum[0], getRandomItemNumber()),
-				apiService.getWord(shuffledPageNum[1], getRandomItemNumber()),
-				apiService.getWord(shuffledPageNum[2], getRandomItemNumber()),
-				apiService.getWord(shuffledPageNum[3], getRandomItemNumber()),
+					apiService.getWord(shuffledPageNum[0], getRandomItemNumber()),
+					apiService.getWord(shuffledPageNum[1], getRandomItemNumber()),
+					apiService.getWord(shuffledPageNum[2], getRandomItemNumber()),
+					apiService.getWord(shuffledPageNum[3], getRandomItemNumber()),
 			)
 		}
 	}

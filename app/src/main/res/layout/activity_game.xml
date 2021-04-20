@@ -10,14 +10,14 @@
 		android:id="@+id/keyboardLayout"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:background="@color/darkGray"
+		android:background="@color/darkGraySolid"
 		app:layout_constraintBottom_toBottomOf="parent" />
 
 	<FrameLayout
 		android:id="@+id/successLayout"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="@color/darkGrayTrans"
+		android:background="@color/darkGraySolid"
 		android:visibility="gone"
 		app:layout_constraintBottom_toBottomOf="parent" />
 
@@ -25,7 +25,7 @@
 		android:id="@+id/gameOverLayout"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="@color/darkGrayTrans"
+		android:background="@color/darkGraySolid"
 		android:visibility="gone"
 		app:layout_constraintBottom_toBottomOf="parent" />
 
@@ -35,7 +35,7 @@
 		android:layout_height="wrap_content"
 		android:layout_marginBottom="24dp"
 		android:layout_marginTop="18dp"
-		android:alpha="0.6"
+		android:alpha="0.8"
 		app:layout_constraintBottom_toTopOf="@id/txtDisplay"
 		app:layout_constraintTop_toTopOf="parent"
 		tools:src="@drawable/hangman_0" />
@@ -57,7 +57,7 @@
 		android:id="@+id/loading"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="@color/darkGrayTrans"
+		android:background="@color/darkGraySolid"
 		app:layout_constraintTop_toTopOf="parent"
 		tools:visibility="gone">
 

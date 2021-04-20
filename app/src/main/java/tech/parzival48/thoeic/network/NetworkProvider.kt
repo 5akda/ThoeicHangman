@@ -11,40 +11,40 @@ import timber.log.Timber
 
 object NetworkProvider {
 
-    private const val GITHUB_URL = "https://raw.githubusercontent.com/parzival48/ThoeicHangman/main/_api/"
-    private var mApiUrl = "https://raw.githubusercontent.com/parzival48/ThoeicHangman/main/_api/"
+	private const val GITHUB_URL = "https://raw.githubusercontent.com/parzival48/ThoeicHangman/main/_api/"
+	private var mApiUrl = "https://raw.githubusercontent.com/parzival48/ThoeicHangman/main/_api/"
 
-    fun setApiUrl(apiUrl: String) {
-        mApiUrl = apiUrl
-    }
+	fun setApiUrl(apiUrl: String) {
+		mApiUrl = apiUrl
+	}
 
-    fun getFirebaseRetrofit(): Retrofit {
-        Timber.d("Retrofit Base URL: %s", mApiUrl)
-        return Retrofit.Builder()
-            .baseUrl(mApiUrl)
-            .client(getOkHttpClient())
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+	fun getFirebaseRetrofit(): Retrofit {
+		Timber.d("Retrofit Base URL: %s", mApiUrl)
+		return Retrofit.Builder()
+				.baseUrl(mApiUrl)
+				.client(getOkHttpClient())
+				.addConverterFactory(GsonConverterFactory.create())
+				.build()
+	}
 
-    fun getGithubRetrofit(): Retrofit {
-        Timber.d("Retrofit Base URL: %s", mApiUrl)
-        return Retrofit.Builder()
-            .baseUrl(GITHUB_URL)
-            .client(getOkHttpClient())
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+	fun getGithubRetrofit(): Retrofit {
+		Timber.d("Retrofit Base URL: %s", mApiUrl)
+		return Retrofit.Builder()
+				.baseUrl(GITHUB_URL)
+				.client(getOkHttpClient())
+				.addConverterFactory(GsonConverterFactory.create())
+				.build()
+	}
 
-    fun getFirestore(): FirebaseFirestore {
-        return Firebase.firestore
-    }
+	fun getFirestore(): FirebaseFirestore {
+		return Firebase.firestore
+	}
 
-    private fun getOkHttpClient(): OkHttpClient {
-        val logger = HttpLoggingInterceptor()
-        logger.level = HttpLoggingInterceptor.Level.BODY
-        return OkHttpClient.Builder()
-            .addInterceptor(logger)
-            .build()
-    }
+	private fun getOkHttpClient(): OkHttpClient {
+		val logger = HttpLoggingInterceptor()
+		logger.level = HttpLoggingInterceptor.Level.BODY
+		return OkHttpClient.Builder()
+				.addInterceptor(logger)
+				.build()
+	}
 }

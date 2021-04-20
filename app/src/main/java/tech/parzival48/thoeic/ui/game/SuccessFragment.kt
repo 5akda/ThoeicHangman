@@ -55,7 +55,7 @@ class SuccessFragment : Fragment() {
 	private inner class SynonymClickListener : View.OnClickListener {
 		override fun onClick(v: View?) {
 			val btn = v as TextView
-			if(btn.text == answerSynonym) {
+			if (btn.text == answerSynonym) {
 				btn.setBackgroundColor(resources.getColor(R.color.correct))
 				binding.txtGreat.text = getString(R.string.excellent)
 				binding.synonymQuizLayout.visibility = View.GONE

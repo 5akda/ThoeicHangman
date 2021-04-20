@@ -27,17 +27,17 @@ class GameViewModel(apiService: WordApiService) : ViewModel() {
 		var temp = displayString.value
 		var existed = false
 		words.value?.get(0)?.english?.toUpperCase(Locale.ROOT)?.let {
-			for(i in it.indices) {
-				if(it[i] == char) {
-					temp = temp?.substring(0, i) + char + temp?.substring(i+1)
+			for (i in it.indices) {
+				if (it[i] == char) {
+					temp = temp?.substring(0, i) + char + temp?.substring(i + 1)
 					existed = true
 				}
 			}
 		}
-		if(!existed) {
+		if (!existed) {
 			numOfAttempts.value = numOfAttempts.value?.plus(1)
 		}
-		displayString.postValue(temp?:"Error")
+		displayString.postValue(temp ?: "Error")
 	}
 
 	fun initDisplayString(quizWord: String) {

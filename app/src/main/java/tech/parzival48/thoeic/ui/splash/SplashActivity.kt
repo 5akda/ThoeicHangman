@@ -42,10 +42,10 @@ class SplashActivity : AppCompatActivity() {
 		checkServer()
 	}
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        backPressed = true
-    }
+	override fun onBackPressed() {
+		super.onBackPressed()
+		backPressed = true
+	}
 
 	private fun checkServer() {
 		val cm = applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE)
@@ -68,18 +68,18 @@ class SplashActivity : AppCompatActivity() {
 		})
 	}
 
-    private fun redirectToHomeActivity() {
-        Handler().postDelayed({
-            if(backPressed.not()) {
-                startActivity(HomeActivity.createIntent(this))
-            }
-            finish()
-        }, 2500)
+	private fun redirectToHomeActivity() {
+		Handler().postDelayed({
+			if (backPressed.not()) {
+				startActivity(HomeActivity.createIntent(this))
+			}
+			finish()
+		}, 2500)
 	}
 
 	private fun subscribeNewerUpdate() {
 		viewModel.latestVersion.observe(this, {
-			if(it != BuildConfig.VERSION_NAME) {
+			if (it != BuildConfig.VERSION_NAME) {
 				//showUpdateSnackbar()
 			}
 		})
@@ -94,11 +94,11 @@ class SplashActivity : AppCompatActivity() {
 
 	private fun showUpdateSnackbar() {
 		Snackbar.make(binding.root, "เกมนี้มีเวอร์ชั่นใหม่ออกแล้วนะ", Snackbar.LENGTH_LONG)
-			.setAction("อัพเดท!", OnUpdateClickListener())
-			.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
-			.setBackgroundTint(Color.parseColor("#eeeeee"))
-			.setTextColor(Color.parseColor("#300303"))
-			.show()
+				.setAction("อัพเดท!", OnUpdateClickListener())
+				.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
+				.setBackgroundTint(Color.parseColor("#eeeeee"))
+				.setTextColor(Color.parseColor("#300303"))
+				.show()
 	}
 
 	private inner class OnExitClickListener : DialogInterface.OnClickListener {

@@ -7,12 +7,12 @@ import tech.parzival48.thoeic.model.Word
 
 interface VocabApiService {
 
-    @GET("vocabulary")
-    suspend fun getVocabulary(): RespondedList<Word>
+	@GET("vocabulary")
+	suspend fun getVocabulary(): RespondedList<Word>
 
-    companion object {
-        fun create(retrofit: Retrofit): VocabApiService {
-            return retrofit.create(VocabApiService::class.java)
-        }
-    }
+	companion object {
+		fun create(retrofit: Retrofit): VocabApiService {
+			return retrofit.create(VocabApiService::class.java)
+		}
+	}
 }

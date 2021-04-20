@@ -15,35 +15,35 @@ import timber.log.Timber
 
 class ThoeicHangmanApp : Application() {
 
-    private val networkModule = module {
+	private val networkModule = module {
 
-        // Firebase Firestore
-        single { NetworkProvider.getFirestore() }
+		// Firebase Firestore
+		single { NetworkProvider.getFirestore() }
 
-        // Retrofit RTDB
-        single { NetworkProvider.getFirebaseRetrofit()}
-        factory { WordApiService.create(get()) }
+		// Retrofit RTDB
+		single { NetworkProvider.getFirebaseRetrofit() }
+		factory { WordApiService.create(get()) }
 
-        // Retrofit Github
-        factory { VocabApiService.create(NetworkProvider.getGithubRetrofit()) }
-    }
+		// Retrofit Github
+		factory { VocabApiService.create(NetworkProvider.getGithubRetrofit()) }
+	}
 
-    private val viewModelModule = module {
-        viewModel { SplashViewModel(get()) }
-        viewModel { GameViewModel(get()) }
-    }
+	private val viewModelModule = module {
+		viewModel { SplashViewModel(get()) }
+		viewModel { GameViewModel(get()) }
+	}
 
-    override fun onCreate() {
-        super.onCreate()
+	override fun onCreate() {
+		super.onCreate()
 
-        startKoin {
-            androidContext(this@ThoeicHangmanApp)
-            androidLogger()
-            modules(listOf(networkModule, viewModelModule))
-        }
+		startKoin {
+			androidContext(this@ThoeicHangmanApp)
+			androidLogger()
+			modules(listOf(networkModule, viewModelModule))
+		}
 
-        if(BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
-        }
-    }
+		if (BuildConfig.DEBUG) {
+			Timber.plant(Timber.DebugTree())
+		}
+	}
 }
