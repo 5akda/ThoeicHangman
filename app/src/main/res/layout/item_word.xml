@@ -1,91 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="10dp"
-    android:layout_marginTop="6dp"
-    android:layout_marginEnd="10dp"
-    android:layout_marginBottom="8dp"
-    android:clickable="true"
-    android:focusable="true">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="8dp"
+	android:layout_marginEnd="10dp"
+	android:layout_marginStart="10dp"
+	android:layout_marginTop="6dp"
+	android:clickable="true"
+	android:focusable="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/wordLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/lightBlack">
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/wordLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/lightBlack">
 
-        <TextView
-            android:id="@+id/txtEnglish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/chalkBlue"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="computer" />
+		<TextView
+			android:id="@+id/txtEnglish"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="12dp"
+			android:layout_marginTop="8dp"
+			android:textColor="@color/chalkBlue"
+			android:textSize="18sp"
+			android:textStyle="bold"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:text="computer" />
 
-        <TextView
-            android:id="@+id/txtPartOfSpeech"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="12dp"
-            android:fontFamily="casual"
-            android:textColor="@color/chalkPink"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/txtEnglish"
-            tools:text="( n. )" />
+		<TextView
+			android:id="@+id/txtPartOfSpeech"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="12dp"
+			android:layout_marginTop="6dp"
+			android:fontFamily="casual"
+			android:textColor="@color/chalkPink"
+			android:textSize="14sp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="@id/txtEnglish"
+			tools:text="( n. )" />
 
-        <TextView
-            android:id="@+id/txtMeaning"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/chalkWhite"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/txtEnglish"
-            app:layout_constraintTop_toBottomOf="@id/txtEnglish"
-            tools:text="คอมพิวเตอร์" />
+		<TextView
+			android:id="@+id/txtMeaning"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginStart="2dp"
+			android:layout_marginTop="2dp"
+			android:textColor="@color/chalkWhite"
+			android:textSize="14sp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="@id/txtEnglish"
+			app:layout_constraintTop_toBottomOf="@id/txtEnglish"
+			tools:text="คอมพิวเตอร์" />
 
-        <TextView
-            android:id="@+id/txtSynInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/synDot"
-            android:textColor="@color/colorPrimary"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/txtMeaning"
-            app:layout_constraintTop_toBottomOf="@id/txtEnglish" />
+		<TextView
+			android:id="@+id/txtSynInfo"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginStart="12dp"
+			android:layout_marginTop="2dp"
+			android:text="@string/synDot"
+			android:textColor="@color/colorPrimary"
+			android:textSize="14sp"
+			android:textStyle="bold"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="@id/txtMeaning"
+			app:layout_constraintTop_toBottomOf="@id/txtEnglish" />
 
-        <TextView
-            android:id="@+id/txtSynonym"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/txtSynInfo"
-            app:layout_constraintTop_toBottomOf="@id/txtEnglish"
-            tools:text="Calculator" />
+		<TextView
+			android:id="@+id/txtSynonym"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginStart="2dp"
+			android:layout_marginTop="2dp"
+			android:textColor="@color/colorPrimary"
+			android:textSize="14sp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="@id/txtSynInfo"
+			app:layout_constraintTop_toBottomOf="@id/txtEnglish"
+			tools:text="Calculator" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+	</androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

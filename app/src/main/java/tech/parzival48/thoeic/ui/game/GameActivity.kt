@@ -24,8 +24,6 @@ class GameActivity : AppCompatActivity() {
 
     private var doubleBackPressedOnce = false
 
-    private val MAX_ATTEMPTS = 9
-
     private val hangmanImages = listOf(
         R.drawable.hangman_0,
         R.drawable.hangman_1,
@@ -38,13 +36,11 @@ class GameActivity : AppCompatActivity() {
         R.drawable.hangman_8
     )
 
-    private lateinit var quizWord: String
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-        showLoading()
+        binding.loading.visible(true)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .add(binding.keyboardLayout.id, KeyboardFragment())
@@ -52,7 +48,7 @@ class GameActivity : AppCompatActivity() {
                 .add(binding.gameOverLayout.id, OverFragment())
                 .commit()
         }
-        subscribeLiveData()
+        observeLiveData()
     }
 
     override fun onBackPressed() {
@@ -65,19 +61,18 @@ class GameActivity : AppCompatActivity() {
         Handler().postDelayed({ doubleBackPressedOnce = false }, 2500)
     }
 
-    private fun subscribeLiveData() {
+    private fun observeLiveData() {
+        var quizWord: String? = null
 
         viewModel.words.observe(this, {
             quizWord = it[0].english
             viewModel.initDisplayString(quizWord)
-            hideLoading()
+            binding.loading.visible(false)
         })
 
         viewModel.displayString.observe(this, {
             binding.txtDisplay.text = it
-            if (it == quizWord.toUpperCase(Locale.ROOT)) {
-                gameEnding(true)
-            }
+            if (it == quizWord?.toUpperCase(Locale.ROOT)) gameEnding(true)
         })
 
         viewModel.numOfAttempts.observe(this, {
@@ -87,14 +82,6 @@ class GameActivity : AppCompatActivity() {
                 binding.imgHangman.loadFromDrawable(hangmanImages[it])
             }
         })
-    }
-
-    private fun hideLoading() {
-        binding.loading.visibility = View.GONE
-    }
-
-    private fun showLoading() {
-        binding.loading.visibility = View.VISIBLE
     }
 
     private fun gameEnding(success: Boolean) {
@@ -119,6 +106,8 @@ class GameActivity : AppCompatActivity() {
     }
 
     companion object {
+        private const val MAX_ATTEMPTS = 9
+
         fun createIntent(context: Context): Intent {
             return Intent(context, GameActivity::class.java)
         }

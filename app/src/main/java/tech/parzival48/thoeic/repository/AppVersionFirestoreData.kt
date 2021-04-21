@@ -32,29 +32,4 @@ class AppVersionFirestoreData(databaseService: FirebaseFirestore) : LiveData<Int
             }
         }
     }
-
-
-    /*
-    suspend fun getVersionName(): String = withContext(Dispatchers.Main) {
-        val versionName: String
-        databaseService.document("ver")
-    }
-    /*
-     */
-    {
-        withContext(Dispatchers.Main) {
-            databaseService.document("version").get()
-                .addOnSuccessListener { result ->
-                    result.getString("name")?.let{
-                        versionName = it
-                    }
-                }
-                .addOnFailureListener {
-                    versionName = BuildConfig.VERSION_NAME
-                }
-            return@withContext versionName
-        }
-    }
-    */
-
 }

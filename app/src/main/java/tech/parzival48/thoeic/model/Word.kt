@@ -1,6 +1,5 @@
 package tech.parzival48.thoeic.model
 
-
 import com.google.gson.annotations.SerializedName
 
 data class Word(

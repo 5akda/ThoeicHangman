@@ -7,16 +7,18 @@ import tech.parzival48.thoeic.network.VocabApiService
 
 class VocabularyDataSource(private val apiService: VocabApiService) : PagingSource<Int, Word>() {
 
-    private val FIRST_PAGE_NUMBER = 1
+    companion object {
+        private const val FIRST_PAGE_NUMBER = 1
+    }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Word> {
         return try {
-            val nextPageNumber = params.key ?: FIRST_PAGE_NUMBER
-            val response = apiService.getVocabulary(nextPageNumber)
+            val nextPageNum = params.key ?: FIRST_PAGE_NUMBER
+            val response = apiService.getVocabulary(nextPageNum)
             LoadResult.Page(
                 data = response.content,
-                prevKey = if (nextPageNumber > FIRST_PAGE_NUMBER) nextPageNumber - 1 else null,
-                nextKey = if (nextPageNumber < response.totalPages) nextPageNumber + 1 else null
+                prevKey = if (nextPageNum > FIRST_PAGE_NUMBER) nextPageNum - 1 else null,
+                nextKey = if (nextPageNum < response.totalPages) nextPageNum + 1 else null
             )
         } catch (e: Exception) {
             LoadResult.Error(e)

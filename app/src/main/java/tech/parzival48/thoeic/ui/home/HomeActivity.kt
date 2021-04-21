@@ -8,6 +8,7 @@ import android.os.Handler
 import android.view.View
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.snackbar.Snackbar
+import tech.parzival48.thoeic.R
 import tech.parzival48.thoeic.databinding.ActivityFragmentContainerBinding
 
 class HomeActivity : FragmentActivity() {
@@ -20,7 +21,6 @@ class HomeActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //overridePendingTransition(R.anim.fadein, R.anim.fadeout)
         setContentView(binding.root)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
 
@@ -44,8 +44,8 @@ class HomeActivity : FragmentActivity() {
     private fun showBackSnackbar() {
         Snackbar.make(binding.root, "กด Back อีกครั้งเพื่อออกจากเกม", Snackbar.LENGTH_LONG)
             .setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
-            .setBackgroundTint(Color.parseColor("#eeeeee"))
-            .setTextColor(Color.parseColor("#300303"))
+            .setBackgroundTint(getColor(R.color.dimWhite))
+            .setTextColor(getColor(R.color.textBlack))
             .show()
     }
 

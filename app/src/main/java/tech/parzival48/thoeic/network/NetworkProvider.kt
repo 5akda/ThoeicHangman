@@ -11,9 +11,8 @@ import timber.log.Timber
 
 object NetworkProvider {
 
-    private const val GITHUB_URL =
-        "https://raw.githubusercontent.com/parzival48/ThoeicHangman/main/_api/"
-    private var mApiUrl = "https://raw.githubusercontent.com/parzival48/ThoeicHangman/main/_api/"
+    private const val GITHUB_URL = "https://raw.githubusercontent.com/parzival48/ThoeicHangman/main/_api/"
+    private var mApiUrl = ""
 
     fun setApiUrl(apiUrl: String) {
         mApiUrl = apiUrl

@@ -50,8 +50,8 @@ class SplashActivity : AppCompatActivity() {
     private fun checkServer() {
         val cm = applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE)
         if (viewModel.hasInternetConnection(cm as ConnectivityManager)) {
-            subscribeNewerUpdate()
-            subscribeUrl()
+            observeNewerUpdate()
+            observeUrl()
         } else {
             MaterialAlertDialogBuilder(this)
                 .setTitle("No Internet Connection")
@@ -78,7 +78,7 @@ class SplashActivity : AppCompatActivity() {
         }, 2500)
     }
 
-    private fun subscribeNewerUpdate() {
+    private fun observeNewerUpdate() {
         viewModel.latestVersion.observe(this, {
             if (BuildConfig.VERSION_CODE < it) {
                 showUpdateSnackbar()
@@ -86,7 +86,7 @@ class SplashActivity : AppCompatActivity() {
         })
     }
 
-    private fun subscribeUrl() {
+    private fun observeUrl() {
         viewModel.baseUrl.observe(this, {
             NetworkProvider.setApiUrl(it)
             redirectToHomeActivity()

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import tech.parzival48.thoeic.R
 import tech.parzival48.thoeic.databinding.FragmentSuccessBinding
+import tech.parzival48.thoeic.utils.visible
 
 class SuccessFragment : Fragment() {
 
@@ -45,13 +46,11 @@ class SuccessFragment : Fragment() {
                 txtAnswer.text = answerSynonym
             }
         })
-
-        with(binding) {
+        binding.run {
             btnChoice1.setOnClickListener(SynonymClickListener())
             btnChoice2.setOnClickListener(SynonymClickListener())
             btnChoice3.setOnClickListener(SynonymClickListener())
             btnChoice4.setOnClickListener(SynonymClickListener())
-
             btnPlayAgain.setOnClickListener(PlayAgainClickListener())
         }
     }
@@ -61,9 +60,11 @@ class SuccessFragment : Fragment() {
             val btn = v as TextView
             if (btn.text == answerSynonym) {
                 btn.setBackgroundColor(resources.getColor(R.color.correct))
-                binding.txtGreat.text = getString(R.string.excellent)
-                binding.synonymQuizLayout.visibility = View.GONE
-                binding.endingLayout.visibility = View.VISIBLE
+                binding.run {
+                    txtGreat.text = getString(R.string.excellent)
+                    synonymQuizLayout.visible(false)
+                    endingLayout.visible(true)
+                }
             } else {
                 btn.setBackgroundColor(resources.getColor(R.color.incorrect))
                 binding.txtInstruction.text = getString(R.string.wrong)

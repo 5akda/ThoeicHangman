@@ -37,7 +37,6 @@ class OverFragment : Fragment() {
         })
 
         binding.btnPlayAgain.setOnClickListener(PlayAgainClickListener())
-
     }
 
     private inner class PlayAgainClickListener : View.OnClickListener {

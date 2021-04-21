@@ -14,6 +14,7 @@ class GameViewModel(apiService: WordApiService) : ViewModel() {
     val words = MutableLiveData<List<Word>>()
     val displayString = MutableLiveData<String>()
     val numOfAttempts = MutableLiveData<Int>()
+
     private val wordDataSource = WordDataSource(apiService)
 
     init {
@@ -40,9 +41,9 @@ class GameViewModel(apiService: WordApiService) : ViewModel() {
         displayString.postValue(temp ?: "Error")
     }
 
-    fun initDisplayString(quizWord: String) {
+    fun initDisplayString(quizWord: String?) {
         var quizString = ""
-        quizWord.forEach {
+        quizWord?.forEach {
             quizString += "_"
         }
         displayString.postValue(quizString)

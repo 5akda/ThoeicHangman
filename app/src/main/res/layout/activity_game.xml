@@ -1,88 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/main_app_background">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/main_app_background">
 
-    <FrameLayout
-        android:id="@+id/keyboardLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/darkGraySolid"
-        app:layout_constraintBottom_toBottomOf="parent" />
+	<FrameLayout
+		android:id="@+id/keyboardLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/darkGraySolid"
+		app:layout_constraintBottom_toBottomOf="parent" />
 
-    <FrameLayout
-        android:id="@+id/successLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/darkGraySolid"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent" />
+	<FrameLayout
+		android:id="@+id/successLayout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/darkGraySolid"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent" />
 
-    <FrameLayout
-        android:id="@+id/gameOverLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/darkGraySolid"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent" />
+	<FrameLayout
+		android:id="@+id/gameOverLayout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/darkGraySolid"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent" />
 
-    <ImageView
-        android:id="@+id/imgHangman"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="24dp"
-        android:alpha="0.8"
-        app:layout_constraintBottom_toTopOf="@id/txtDisplay"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/hangman_0" />
+	<ImageView
+		android:id="@+id/imgHangman"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="24dp"
+		android:layout_marginTop="18dp"
+		android:alpha="0.8"
+		app:layout_constraintBottom_toTopOf="@id/txtDisplay"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:src="@drawable/hangman_0" />
 
-    <TextView
-        android:id="@+id/txtDisplay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="casual"
-        android:letterSpacing="0.2"
-        android:textAlignment="center"
-        android:textColor="@color/chalkWhite"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/keyboardLayout" />
+	<TextView
+		android:id="@+id/txtDisplay"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="8dp"
+		android:fontFamily="casual"
+		android:letterSpacing="0.2"
+		android:textAlignment="center"
+		android:textColor="@color/chalkWhite"
+		android:textSize="30dp"
+		android:textStyle="bold"
+		app:layout_constraintBottom_toTopOf="@+id/keyboardLayout" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/loading"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/darkGraySolid"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="gone">
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/loading"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/darkGraySolid"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:visibility="gone">
 
-        <ProgressBar
-            style="@style/Widget.AppCompat.ProgressBar"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:indeterminateTint="@color/chalkBlue"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+		<ProgressBar
+			style="@style/Widget.AppCompat.ProgressBar"
+			android:layout_width="150dp"
+			android:layout_height="150dp"
+			android:indeterminateTint="@color/chalkBlue"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:text="@string/loading"
-            android:textAlignment="center"
-            android:textColor="@color/chalkBlue"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:fontFamily="casual"
+			android:text="@string/loading"
+			android:textAlignment="center"
+			android:textColor="@color/chalkBlue"
+			android:textSize="18dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+	</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
