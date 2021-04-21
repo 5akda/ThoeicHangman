@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import tech.parzival48.thoeic.databinding.ItemWordBinding
 import tech.parzival48.thoeic.model.Word
+import tech.parzival48.thoeic.utils.visible
 
 class WordsAdapter(
     private val itemClickListener: OnWordClickListener
@@ -36,6 +37,10 @@ class WordsAdapter(
             txtMeaning.text = item.meaning
             txtSynonym.text = item.synonym
             wordLayout.setOnClickListener { itemClickListener.onClick(item) }
+
+            /* TRY */
+            txtSynonym.visible(false)
+            txtSynInfo.visible(false)
         }
     }
 
