@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.google.firebase.firestore.*
 import timber.log.Timber
 
-class AppVersionFirestoreData(databaseService: FirebaseFirestore) : LiveData<String>() {
+class AppVersionFirestoreData(databaseService: FirebaseFirestore) : LiveData<Int>() {
 
 	private var registration: ListenerRegistration? = null
 	private val docReference = databaseService.collection("api").document("version")
@@ -28,7 +28,7 @@ class AppVersionFirestoreData(databaseService: FirebaseFirestore) : LiveData<Str
 				Timber.d(it)
 			}
 			snapshot?.let {
-				value = it.getString("name")
+				value = it.getLong("code")?.toInt()
 			}
 		}
 	}

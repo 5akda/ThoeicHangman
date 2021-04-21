@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import tech.parzival48.thoeic.databinding.FragmentHomeBinding
 import tech.parzival48.thoeic.ui.game.GameActivity
+import tech.parzival48.thoeic.ui.vocab.VocabActivity
 
 class HomeFragment : Fragment() {
 
@@ -41,6 +42,7 @@ class HomeFragment : Fragment() {
 
 	private inner class OnVocabClickListener : View.OnClickListener {
 		override fun onClick(v: View?) {
+			startActivity(VocabActivity.createIntent(requireContext()))
 		}
 	}
 

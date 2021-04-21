@@ -15,6 +15,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.parzival48.thoeic.BuildConfig
+import tech.parzival48.thoeic.R
 import tech.parzival48.thoeic.databinding.ActivitySplashBinding
 import tech.parzival48.thoeic.network.NetworkProvider
 import tech.parzival48.thoeic.ui.home.HomeActivity
@@ -79,8 +80,8 @@ class SplashActivity : AppCompatActivity() {
 
 	private fun subscribeNewerUpdate() {
 		viewModel.latestVersion.observe(this, {
-			if (it != BuildConfig.VERSION_NAME) {
-				//showUpdateSnackbar()
+			if (BuildConfig.VERSION_CODE < it) {
+				showUpdateSnackbar()
 			}
 		})
 	}
@@ -94,10 +95,10 @@ class SplashActivity : AppCompatActivity() {
 
 	private fun showUpdateSnackbar() {
 		Snackbar.make(binding.root, "เกมนี้มีเวอร์ชั่นใหม่ออกแล้วนะ", Snackbar.LENGTH_LONG)
-				.setAction("อัพเดท!", OnUpdateClickListener())
+				//.setAction("อัพเดท!", OnUpdateClickListener())
 				.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
-				.setBackgroundTint(Color.parseColor("#eeeeee"))
-				.setTextColor(Color.parseColor("#300303"))
+				.setBackgroundTint(getColor(R.color.dimWhite))
+				.setTextColor(getColor(R.color.textBlack))
 				.show()
 	}
 

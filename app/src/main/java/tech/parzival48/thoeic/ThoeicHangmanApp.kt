@@ -11,6 +11,7 @@ import tech.parzival48.thoeic.network.VocabApiService
 import tech.parzival48.thoeic.network.WordApiService
 import tech.parzival48.thoeic.ui.game.GameViewModel
 import tech.parzival48.thoeic.ui.splash.SplashViewModel
+import tech.parzival48.thoeic.ui.vocab.VocabViewModel
 import timber.log.Timber
 
 class ThoeicHangmanApp : Application() {
@@ -31,6 +32,7 @@ class ThoeicHangmanApp : Application() {
 	private val viewModelModule = module {
 		viewModel { SplashViewModel(get()) }
 		viewModel { GameViewModel(get()) }
+		viewModel { VocabViewModel(get()) }
 	}
 
 	override fun onCreate() {

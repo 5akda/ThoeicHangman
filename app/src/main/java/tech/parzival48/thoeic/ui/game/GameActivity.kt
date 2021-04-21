@@ -12,6 +12,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.parzival48.thoeic.R
 import tech.parzival48.thoeic.databinding.ActivityGameBinding
 import tech.parzival48.thoeic.utils.loadFromDrawable
+import tech.parzival48.thoeic.utils.visible
 import java.util.*
 
 class GameActivity : AppCompatActivity() {
@@ -99,22 +100,22 @@ class GameActivity : AppCompatActivity() {
 
 	private fun gameEnding(success: Boolean) {
 		with(binding) {
-			keyboardLayout.visibility = View.GONE
-			imgHangman.visibility = View.GONE
-			txtDisplay.visibility = View.GONE
+			keyboardLayout.visible(false)
+			imgHangman.visible(false)
+			txtDisplay.visible(false)
 		}
 		if (success) {
-			binding.successLayout.visibility = View.VISIBLE
+			binding.successLayout.visible(true)
 		} else {
-			binding.gameOverLayout.visibility = View.VISIBLE
+			binding.gameOverLayout.visible(true)
 		}
 	}
 
 	private fun showBackSnackbar() {
 		Snackbar.make(binding.root, "กด Back อีกครั้งเพื่อกลับไปยังหน้าเมนู", Snackbar.LENGTH_LONG)
 				.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
-				.setBackgroundTint(Color.parseColor("#eeeeee"))
-				.setTextColor(Color.parseColor("#300303"))
+				.setBackgroundTint(getColor(R.color.dimWhite))
+				.setTextColor(getColor(R.color.textBlack))
 				.show()
 	}
 
