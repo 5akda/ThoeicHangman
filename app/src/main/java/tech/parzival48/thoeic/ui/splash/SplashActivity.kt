@@ -58,6 +58,7 @@ class SplashActivity : AppCompatActivity() {
                 .setMessage("เกมนี้ต้องการเชื่อมต่ออินเทอร์เน็ต กรุณาเปิดการเชื่อมต่อ")
                 .setNeutralButton("Exit", OnExitClickListener())
                 .setPositiveButton("Turn On", OnSetupClickListener())
+                .setCancelable(false)
                 .show()
         }
     }

@@ -2,6 +2,7 @@ package tech.parzival48.thoeic.ui.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -9,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import tech.parzival48.thoeic.databinding.ItemWordBinding
 import tech.parzival48.thoeic.model.Word
 
-class WordsAdapter : PagingDataAdapter<Word, WordsAdapter.WordViewHolder>(WordsComparator) {
+class WordsAdapter(
+    private val itemClickListener: OnWordClickListener
+) : PagingDataAdapter<Word, WordsAdapter.WordViewHolder>(WordsComparator) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
         return WordViewHolder(
@@ -33,6 +36,7 @@ class WordsAdapter : PagingDataAdapter<Word, WordsAdapter.WordViewHolder>(WordsC
             txtPartOfSpeech.text = "( ${item.partOfSpeech} )"
             txtMeaning.text = item.meaning
             txtSynonym.text = item.synonym
+            wordLayout.setOnClickListener { itemClickListener.onClick(item) }
         }
     }
 
@@ -42,5 +46,9 @@ class WordsAdapter : PagingDataAdapter<Word, WordsAdapter.WordViewHolder>(WordsC
         }
 
         override fun areContentsTheSame(oldItem: Word, newItem: Word) = (oldItem == newItem)
+    }
+
+    interface OnWordClickListener {
+        fun onClick(word: Word)
     }
 }
