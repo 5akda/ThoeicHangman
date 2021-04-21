@@ -12,8 +12,10 @@ import tech.parzival48.thoeic.model.Word
 class WordsAdapter : PagingDataAdapter<Word, WordsAdapter.WordViewHolder>(WordsComparator) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
-        return WordViewHolder(ItemWordBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false)
+        return WordViewHolder(
+            ItemWordBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
         )
     }
 
@@ -23,7 +25,8 @@ class WordsAdapter : PagingDataAdapter<Word, WordsAdapter.WordViewHolder>(WordsC
         }
     }
 
-    inner class WordViewHolder(private val binding: ItemWordBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class WordViewHolder(private val binding: ItemWordBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bindWord(item: Word) = with(binding) {
             txtEnglish.text = item.english

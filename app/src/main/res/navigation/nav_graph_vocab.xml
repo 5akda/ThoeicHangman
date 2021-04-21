@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/vocabFragment"
-    android:id="@+id/nav_graph_vocab">
+    android:id="@+id/nav_graph_vocab"
+    app:startDestination="@id/vocabFragment">
 
     <fragment
         android:id="@+id/vocabFragment"
         android:name="tech.parzival48.thoeic.ui.vocab.VocabFragment"
         android:label="@string/vocab_fragment"
-        tools:layout="@layout/fragment_vocab"
-        />
+        tools:layout="@layout/fragment_vocab" />
 
 </navigation>

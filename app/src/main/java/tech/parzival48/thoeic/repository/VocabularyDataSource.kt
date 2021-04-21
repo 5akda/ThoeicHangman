@@ -15,8 +15,8 @@ class VocabularyDataSource(private val apiService: VocabApiService) : PagingSour
             val response = apiService.getVocabulary(nextPageNumber)
             LoadResult.Page(
                 data = response.content,
-                prevKey = if(nextPageNumber > FIRST_PAGE_NUMBER) nextPageNumber - 1 else null,
-                nextKey = if(nextPageNumber < response.totalPages) nextPageNumber + 1 else null
+                prevKey = if (nextPageNumber > FIRST_PAGE_NUMBER) nextPageNumber - 1 else null,
+                nextKey = if (nextPageNumber < response.totalPages) nextPageNumber + 1 else null
             )
         } catch (e: Exception) {
             LoadResult.Error(e)

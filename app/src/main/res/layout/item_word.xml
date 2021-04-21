@@ -1,89 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:focusable="true"
-    android:clickable="true"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
-    android:layout_marginTop="6dp"
-    android:layout_marginBottom="8dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/lightBlack"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:background="@color/lightBlack">
 
         <TextView
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="12dp"
-            android:textColor="@color/chalkBlue"
-            tools:text="computer"
-            android:textSize="18sp"
-            android:textStyle="bold"
             android:id="@+id/txtEnglish"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/chalkBlue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="computer" />
 
         <TextView
-            android:fontFamily="casual"
             android:id="@+id/txtPartOfSpeech"
-            android:textColor="@color/chalkPink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
             android:layout_marginTop="6dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="casual"
+            android:textColor="@color/chalkPink"
             android:textSize="14sp"
-            tools:text="( n. )"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/txtEnglish"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            tools:text="( n. )" />
 
         <TextView
-            android:textColor="@color/chalkWhite"
-            tools:text="คอมพิวเตอร์"
-            android:textSize="14sp"
+            android:id="@+id/txtMeaning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="8dp"
+            android:textColor="@color/chalkWhite"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/txtEnglish"
             app:layout_constraintTop_toBottomOf="@id/txtEnglish"
-            android:id="@+id/txtMeaning"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content" />
+            tools:text="คอมพิวเตอร์" />
 
         <TextView
-            android:textColor="@color/colorPrimary"
-            android:text="@string/synDot"
-            android:textStyle="bold"
-            android:textSize="14sp"
+            android:id="@+id/txtSynInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="8dp"
+            android:text="@string/synDot"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/txtMeaning"
-            app:layout_constraintTop_toBottomOf="@id/txtEnglish"
-            android:id="@+id/txtSynInfo"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content" />
+            app:layout_constraintTop_toBottomOf="@id/txtEnglish" />
 
         <TextView
-            android:textColor="@color/colorPrimary"
-            tools:text="Calculator"
-            android:textSize="14sp"
+            android:id="@+id/txtSynonym"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="8dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/txtSynInfo"
             app:layout_constraintTop_toBottomOf="@id/txtEnglish"
-            android:id="@+id/txtSynonym"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content" />
+            tools:text="Calculator" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -2,7 +2,9 @@ package tech.parzival48.thoeic.ui.vocab
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.paging.*
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.cachedIn
 import tech.parzival48.thoeic.network.VocabApiService
 import tech.parzival48.thoeic.repository.VocabularyDataSource
 

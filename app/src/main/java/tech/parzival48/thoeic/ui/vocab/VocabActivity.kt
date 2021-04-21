@@ -2,9 +2,9 @@ package tech.parzival48.thoeic.ui.vocab
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import tech.parzival48.thoeic.R
 
 class VocabActivity : AppCompatActivity() {

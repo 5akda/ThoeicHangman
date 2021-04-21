@@ -28,7 +28,7 @@ class WordsLoadStateAdapter(
         private val retry: () -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bindState(state: LoadState) {
-            if(state is LoadState.Error) {
+            if (state is LoadState.Error) {
                 binding.txtError.text = state.error.localizedMessage
             }
             binding.also {
@@ -39,8 +39,6 @@ class WordsLoadStateAdapter(
             }
         }
     }
-
-
 
 
 }

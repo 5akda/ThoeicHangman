@@ -6,30 +6,30 @@ import timber.log.Timber
 
 class UrlFirestoreData(firestoreService: FirebaseFirestore) : LiveData<String>() {
 
-	private var registration: ListenerRegistration? = null
-	private val docReference = firestoreService.collection("api").document("url")
+    private var registration: ListenerRegistration? = null
+    private val docReference = firestoreService.collection("api").document("url")
 
-	override fun onActive() {
-		super.onActive()
-		registration = docReference.addSnapshotListener(DocEventListener())
-	}
+    override fun onActive() {
+        super.onActive()
+        registration = docReference.addSnapshotListener(DocEventListener())
+    }
 
-	override fun onInactive() {
-		super.onInactive()
-		if (!hasActiveObservers()) {
-			registration?.remove()
-			registration = null
-		}
-	}
+    override fun onInactive() {
+        super.onInactive()
+        if (!hasActiveObservers()) {
+            registration?.remove()
+            registration = null
+        }
+    }
 
-	private inner class DocEventListener : EventListener<DocumentSnapshot> {
-		override fun onEvent(snapshot: DocumentSnapshot?, error: FirebaseFirestoreException?) {
-			error?.let {
-				Timber.d(it)
-			}
-			snapshot?.let {
-				value = it.getString("base")
-			}
-		}
-	}
+    private inner class DocEventListener : EventListener<DocumentSnapshot> {
+        override fun onEvent(snapshot: DocumentSnapshot?, error: FirebaseFirestoreException?) {
+            error?.let {
+                Timber.d(it)
+            }
+            snapshot?.let {
+                value = it.getString("base")
+            }
+        }
+    }
 }
