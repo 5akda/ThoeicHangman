@@ -8,15 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import tech.parzival48.thoeic.R
 
 class VocabActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_vocab)
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-    }
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setContentView(R.layout.activity_vocab)
+		window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+	}
 
-    companion object {
-        fun createIntent(context: Context): Intent {
-            return Intent(context, VocabActivity::class.java)
-        }
-    }
+	companion object {
+		fun createIntent(context: Context): Intent {
+			return Intent(context, VocabActivity::class.java)
+		}
+	}
 }

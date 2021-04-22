@@ -45,4 +45,16 @@
 	<string name="vocab_fragment">vocab_fragment</string>
 	<string name="synDot">Syn.</string>
 	<string name="tapToRetry">Tap to Retry</string>
+	<string name="AndroidDev">&#128518; Android Developer :</string>
+	<string name="BackendDev">&#128513; Backend Developer :</string>
+	<string name="UxUi">&#128522; UX/UI Designer :</string>
+	<string name="Tester">&#128528; Tester :</string>
+	<string name="User">&#128560; Active User :</string>
+	<string name="facebook">facebook.com/parzival48</string>
+	<string name="instagram">instagram.com/parzival48</string>
+	<string name="twitter">twitter.com/parzival48</string>
+	<string name="github">github.com/parzival48</string>
+	<string name="also">also parzival48</string>
+	<string name="close">close (x)</string>
+	<string name="myMail">parzival48.tech@gmail.com</string>
 </resources>

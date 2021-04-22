@@ -12,60 +12,60 @@ import tech.parzival48.thoeic.databinding.FragmentKeyboardBinding
 
 class KeyboardFragment : Fragment() {
 
-    private val binding: FragmentKeyboardBinding by lazy {
-        FragmentKeyboardBinding.inflate(layoutInflater)
-    }
+	private val binding: FragmentKeyboardBinding by lazy {
+		FragmentKeyboardBinding.inflate(layoutInflater)
+	}
 
-    private val viewModel: GameViewModel by sharedViewModel()
+	private val viewModel: GameViewModel by sharedViewModel()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return binding.root
-    }
+	override fun onCreateView(
+			inflater: LayoutInflater,
+			container: ViewGroup?,
+			savedInstanceState: Bundle?
+	): View {
+		return binding.root
+	}
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        with(binding) {
-            btnA.setOnClickListener(KeyboardClickListener())
-            btnB.setOnClickListener(KeyboardClickListener())
-            btnC.setOnClickListener(KeyboardClickListener())
-            btnD.setOnClickListener(KeyboardClickListener())
-            btnE.setOnClickListener(KeyboardClickListener())
-            btnF.setOnClickListener(KeyboardClickListener())
-            btnG.setOnClickListener(KeyboardClickListener())
-            btnH.setOnClickListener(KeyboardClickListener())
-            btnI.setOnClickListener(KeyboardClickListener())
-            btnJ.setOnClickListener(KeyboardClickListener())
-            btnK.setOnClickListener(KeyboardClickListener())
-            btnL.setOnClickListener(KeyboardClickListener())
-            btnM.setOnClickListener(KeyboardClickListener())
-            btnN.setOnClickListener(KeyboardClickListener())
-            btnO.setOnClickListener(KeyboardClickListener())
-            btnP.setOnClickListener(KeyboardClickListener())
-            btnQ.setOnClickListener(KeyboardClickListener())
-            btnR.setOnClickListener(KeyboardClickListener())
-            btnS.setOnClickListener(KeyboardClickListener())
-            btnT.setOnClickListener(KeyboardClickListener())
-            btnU.setOnClickListener(KeyboardClickListener())
-            btnV.setOnClickListener(KeyboardClickListener())
-            btnW.setOnClickListener(KeyboardClickListener())
-            btnX.setOnClickListener(KeyboardClickListener())
-            btnY.setOnClickListener(KeyboardClickListener())
-            btnZ.setOnClickListener(KeyboardClickListener())
-        }
+	override fun onActivityCreated(savedInstanceState: Bundle?) {
+		super.onActivityCreated(savedInstanceState)
+		with(binding) {
+			btnA.setOnClickListener(KeyboardClickListener())
+			btnB.setOnClickListener(KeyboardClickListener())
+			btnC.setOnClickListener(KeyboardClickListener())
+			btnD.setOnClickListener(KeyboardClickListener())
+			btnE.setOnClickListener(KeyboardClickListener())
+			btnF.setOnClickListener(KeyboardClickListener())
+			btnG.setOnClickListener(KeyboardClickListener())
+			btnH.setOnClickListener(KeyboardClickListener())
+			btnI.setOnClickListener(KeyboardClickListener())
+			btnJ.setOnClickListener(KeyboardClickListener())
+			btnK.setOnClickListener(KeyboardClickListener())
+			btnL.setOnClickListener(KeyboardClickListener())
+			btnM.setOnClickListener(KeyboardClickListener())
+			btnN.setOnClickListener(KeyboardClickListener())
+			btnO.setOnClickListener(KeyboardClickListener())
+			btnP.setOnClickListener(KeyboardClickListener())
+			btnQ.setOnClickListener(KeyboardClickListener())
+			btnR.setOnClickListener(KeyboardClickListener())
+			btnS.setOnClickListener(KeyboardClickListener())
+			btnT.setOnClickListener(KeyboardClickListener())
+			btnU.setOnClickListener(KeyboardClickListener())
+			btnV.setOnClickListener(KeyboardClickListener())
+			btnW.setOnClickListener(KeyboardClickListener())
+			btnX.setOnClickListener(KeyboardClickListener())
+			btnY.setOnClickListener(KeyboardClickListener())
+			btnZ.setOnClickListener(KeyboardClickListener())
+		}
 
-    }
+	}
 
-    private inner class KeyboardClickListener : View.OnClickListener {
-        override fun onClick(v: View?) {
-            val btn = v as TextView
-            btn.isEnabled = false
-            viewModel.guessAlphabet(btn.text.first())
-            btn.setTextColor(Color.parseColor("#252E30"))
-        }
-    }
+	private inner class KeyboardClickListener : View.OnClickListener {
+		override fun onClick(v: View?) {
+			val btn = v as TextView
+			btn.isEnabled = false
+			viewModel.guessAlphabet(btn.text.first())
+			btn.setTextColor(Color.parseColor("#252E30"))
+		}
+	}
 
 }

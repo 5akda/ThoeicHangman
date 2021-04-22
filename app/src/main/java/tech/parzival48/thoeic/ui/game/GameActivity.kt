@@ -10,107 +10,110 @@ import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.parzival48.thoeic.R
 import tech.parzival48.thoeic.databinding.ActivityGameBinding
+import tech.parzival48.thoeic.ui.popup.LoadingDialogFragment
 import tech.parzival48.thoeic.utils.loadFromDrawable
 import tech.parzival48.thoeic.utils.visible
 import java.util.*
 
 class GameActivity : AppCompatActivity() {
 
-    private val binding: ActivityGameBinding by lazy {
-        ActivityGameBinding.inflate(layoutInflater)
-    }
+	private val binding: ActivityGameBinding by lazy {
+		ActivityGameBinding.inflate(layoutInflater)
+	}
 
-    private val viewModel: GameViewModel by viewModel()
+	private val viewModel: GameViewModel by viewModel()
 
-    private var doubleBackPressedOnce = false
+	private var doubleBackPressedOnce = false
 
-    private val hangmanImages = listOf(
-        R.drawable.hangman_0,
-        R.drawable.hangman_1,
-        R.drawable.hangman_2,
-        R.drawable.hangman_3,
-        R.drawable.hangman_4,
-        R.drawable.hangman_5,
-        R.drawable.hangman_6,
-        R.drawable.hangman_7,
-        R.drawable.hangman_8
-    )
+	private val hangmanImages = listOf(
+			R.drawable.hangman_0,
+			R.drawable.hangman_1,
+			R.drawable.hangman_2,
+			R.drawable.hangman_3,
+			R.drawable.hangman_4,
+			R.drawable.hangman_5,
+			R.drawable.hangman_6,
+			R.drawable.hangman_7,
+			R.drawable.hangman_8
+	)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-        binding.loading.visible(true)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .add(binding.keyboardLayout.id, KeyboardFragment())
-                .add(binding.successLayout.id, SuccessFragment())
-                .add(binding.gameOverLayout.id, OverFragment())
-                .commit()
-        }
-        observeLiveData()
-    }
+	private val loading = LoadingDialogFragment()
 
-    override fun onBackPressed() {
-        if (doubleBackPressedOnce) {
-            super.onBackPressed()
-            return
-        }
-        doubleBackPressedOnce = true
-        showBackSnackbar()
-        Handler().postDelayed({ doubleBackPressedOnce = false }, 2500)
-    }
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setContentView(binding.root)
+		window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+		loading.show(supportFragmentManager, "Loading")
+		if (savedInstanceState == null) {
+			supportFragmentManager.beginTransaction()
+					.add(binding.keyboardLayout.id, KeyboardFragment())
+					.add(binding.successLayout.id, SuccessFragment())
+					.add(binding.gameOverLayout.id, OverFragment())
+					.commit()
+		}
+		observeLiveData()
+	}
 
-    private fun observeLiveData() {
-        var quizWord: String? = null
+	override fun onBackPressed() {
+		if (doubleBackPressedOnce) {
+			super.onBackPressed()
+			return
+		}
+		doubleBackPressedOnce = true
+		showBackSnackbar()
+		Handler().postDelayed({ doubleBackPressedOnce = false }, 2500)
+	}
 
-        viewModel.words.observe(this, {
-            quizWord = it[0].english
-            viewModel.initDisplayString(quizWord)
-            binding.loading.visible(false)
-        })
+	private fun observeLiveData() {
+		var quizWord: String? = null
 
-        viewModel.displayString.observe(this, {
-            binding.txtDisplay.text = it
-            if (it == quizWord?.toUpperCase(Locale.ROOT)) gameEnding(true)
-        })
+		viewModel.words.observe(this, {
+			quizWord = it[0].english
+			viewModel.initDisplayString(quizWord)
+			loading.dismiss()
+		})
 
-        viewModel.numOfAttempts.observe(this, {
-            if (it == MAX_ATTEMPTS) {
-                gameEnding(false)
-            } else {
-                binding.imgHangman.loadFromDrawable(hangmanImages[it])
-            }
-        })
-    }
+		viewModel.displayString.observe(this, {
+			binding.txtDisplay.text = it
+			if (it == quizWord?.toUpperCase(Locale.ROOT)) gameEnding(true)
+		})
 
-    private fun gameEnding(success: Boolean) {
-        with(binding) {
-            keyboardLayout.visible(false)
-            imgHangman.visible(false)
-            txtDisplay.visible(false)
-        }
-        if (success) {
-            binding.successLayout.visible(true)
-        } else {
-            binding.gameOverLayout.visible(true)
-        }
-    }
+		viewModel.numOfAttempts.observe(this, {
+			if (it == MAX_ATTEMPTS) {
+				gameEnding(false)
+			} else {
+				binding.imgHangman.loadFromDrawable(hangmanImages[it])
+			}
+		})
+	}
 
-    private fun showBackSnackbar() {
-        Snackbar.make(binding.root, "กด Back อีกครั้งเพื่อกลับไปยังหน้าเมนู", Snackbar.LENGTH_LONG)
-            .setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
-            .setBackgroundTint(getColor(R.color.dimWhite))
-            .setTextColor(getColor(R.color.textBlack))
-            .show()
-    }
+	private fun gameEnding(success: Boolean) {
+		with(binding) {
+			keyboardLayout.visible(false)
+			imgHangman.visible(false)
+			txtDisplay.visible(false)
+		}
+		if (success) {
+			binding.successLayout.visible(true)
+		} else {
+			binding.gameOverLayout.visible(true)
+		}
+	}
 
-    companion object {
-        private const val MAX_ATTEMPTS = 9
+	private fun showBackSnackbar() {
+		Snackbar.make(binding.root, "กด Back อีกครั้งเพื่อกลับไปยังหน้าเมนู", Snackbar.LENGTH_LONG)
+				.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
+				.setBackgroundTint(getColor(R.color.dimWhite))
+				.setTextColor(getColor(R.color.textBlack))
+				.show()
+	}
 
-        fun createIntent(context: Context): Intent {
-            return Intent(context, GameActivity::class.java)
-        }
-    }
+	companion object {
+		private const val MAX_ATTEMPTS = 9
+
+		fun createIntent(context: Context): Intent {
+			return Intent(context, GameActivity::class.java)
+		}
+	}
 
 }

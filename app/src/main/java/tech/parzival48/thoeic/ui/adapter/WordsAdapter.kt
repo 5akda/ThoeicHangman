@@ -11,48 +11,48 @@ import tech.parzival48.thoeic.model.Word
 import tech.parzival48.thoeic.utils.visible
 
 class WordsAdapter(
-    private val itemClickListener: OnWordClickListener
+		private val itemClickListener: OnWordClickListener
 ) : PagingDataAdapter<Word, WordsAdapter.WordViewHolder>(WordsComparator) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
-        return WordViewHolder(
-            ItemWordBinding.inflate(
-                LayoutInflater.from(parent.context), parent, false
-            )
-        )
-    }
+	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
+		return WordViewHolder(
+				ItemWordBinding.inflate(
+						LayoutInflater.from(parent.context), parent, false
+				)
+		)
+	}
 
-    override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
-        getItem(position)?.let {
-            holder.bindWord(it)
-        }
-    }
+	override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
+		getItem(position)?.let {
+			holder.bindWord(it)
+		}
+	}
 
-    inner class WordViewHolder(private val binding: ItemWordBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        @SuppressLint("SetTextI18n")
-        fun bindWord(item: Word) = with(binding) {
-            txtEnglish.text = item.english
-            txtPartOfSpeech.text = "( ${item.partOfSpeech} )"
-            txtMeaning.text = item.meaning
-            txtSynonym.text = item.synonym
-            wordLayout.setOnClickListener { itemClickListener.onClick(item) }
+	inner class WordViewHolder(private val binding: ItemWordBinding) :
+			RecyclerView.ViewHolder(binding.root) {
+		@SuppressLint("SetTextI18n")
+		fun bindWord(item: Word) = with(binding) {
+			txtEnglish.text = item.english
+			txtPartOfSpeech.text = "( ${item.partOfSpeech} )"
+			txtMeaning.text = item.meaning
+			txtSynonym.text = item.synonym
+			wordLayout.setOnClickListener { itemClickListener.onClick(item) }
 
-            /* TRY */
-            txtSynonym.visible(false)
-            txtSynInfo.visible(false)
-        }
-    }
+			/* TRY */
+			txtSynonym.visible(false)
+			txtSynInfo.visible(false)
+		}
+	}
 
-    object WordsComparator : DiffUtil.ItemCallback<Word>() {
-        override fun areItemsTheSame(oldItem: Word, newItem: Word): Boolean {
-            return oldItem.english == newItem.english
-        }
+	object WordsComparator : DiffUtil.ItemCallback<Word>() {
+		override fun areItemsTheSame(oldItem: Word, newItem: Word): Boolean {
+			return oldItem.english == newItem.english
+		}
 
-        override fun areContentsTheSame(oldItem: Word, newItem: Word) = (oldItem == newItem)
-    }
+		override fun areContentsTheSame(oldItem: Word, newItem: Word) = (oldItem == newItem)
+	}
 
-    interface OnWordClickListener {
-        fun onClick(word: Word)
-    }
+	interface OnWordClickListener {
+		fun onClick(word: Word)
+	}
 }
