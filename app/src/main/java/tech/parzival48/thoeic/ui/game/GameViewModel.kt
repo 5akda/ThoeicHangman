@@ -38,7 +38,7 @@ class GameViewModel(apiService: WordApiService) : ViewModel() {
 		if (!existed) {
 			numOfAttempts.value = numOfAttempts.value?.plus(1)
 		}
-		displayString.postValue(temp ?: "Error")
+		displayString.value = temp?:"error"
 	}
 
 	fun initDisplayString(quizWord: String?) {

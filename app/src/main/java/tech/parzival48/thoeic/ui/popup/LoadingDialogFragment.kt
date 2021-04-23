@@ -32,14 +32,6 @@ class LoadingDialogFragment : DialogFragment() {
 
 		dialog?.setCancelable(false)
 		dialog?.window?.setBackgroundDrawableResource(R.color.transparent)
-
-	}
-
-	override fun onStart() {
-		super.onStart()
-		val width = ViewGroup.LayoutParams.MATCH_PARENT
-		val height = ViewGroup.LayoutParams.MATCH_PARENT
-		dialog?.window?.setLayout(width, height)
 	}
 
 }

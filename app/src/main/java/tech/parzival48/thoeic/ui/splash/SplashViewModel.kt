@@ -2,25 +2,32 @@ package tech.parzival48.thoeic.ui.splash
 
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import tech.parzival48.thoeic.repository.AppVersionFirestoreData
 import tech.parzival48.thoeic.repository.UrlFirestoreData
 import timber.log.Timber
 
 class SplashViewModel(databaseService: FirebaseFirestore) : ViewModel() {
 
-	val animationString = MutableLiveData<String>()
 	val latestVersion = AppVersionFirestoreData(databaseService)
 	val baseUrl = UrlFirestoreData(databaseService)
+	private val animations = listOf(
+			"_ _ _ _ M _ _",
+			"H _ _ _ M _ _",
+			"H A _ _ M A _",
+			"H A N _ M A N",
+			"H A N G M A N"
+	)
 
-	init {
-		drawAnimation()
+	val animationString: Flow<String> = flow {
+		animations.forEach {
+			delay(350)
+			emit(it)
+		}
 	}
 
 	fun hasInternetConnection(connectivityManager: ConnectivityManager): Boolean {
@@ -37,19 +44,4 @@ class SplashViewModel(databaseService: FirebaseFirestore) : ViewModel() {
 		return false
 	}
 
-	private fun drawAnimation() {
-		val animations = listOf(
-				"_ _ _ _ M _ _",
-				"H _ _ _ M _ _",
-				"H A _ _ M A _",
-				"H A N _ M A N",
-				"H A N G M A N"
-		)
-		viewModelScope.launch(Dispatchers.IO) {
-			animations.forEach {
-				delay(350L)
-				animationString.postValue(it)
-			}
-		}
-	}
 }

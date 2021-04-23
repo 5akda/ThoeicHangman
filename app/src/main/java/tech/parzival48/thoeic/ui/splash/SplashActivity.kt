@@ -10,8 +10,12 @@ import android.os.Handler
 import android.provider.Settings
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.parzival48.thoeic.BuildConfig
 import tech.parzival48.thoeic.R
@@ -63,10 +67,10 @@ class SplashActivity : AppCompatActivity() {
 		}
 	}
 
-	private fun drawAnimation() {
-		viewModel.animationString.observe(this, {
+	private fun drawAnimation() = lifecycleScope.launch(Dispatchers.Main) {
+		viewModel.animationString.collect {
 			binding.txtHangman.text = it
-		})
+		}
 	}
 
 	private fun redirectToHomeActivity() {
