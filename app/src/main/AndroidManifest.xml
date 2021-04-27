@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
-        <activity android:name=".ui.vocab.VocabActivity"></activity>
+        <activity
+            android:name=".ui.vocab.VocabActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.game.GameActivity"
             android:screenOrientation="portrait" />

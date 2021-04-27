@@ -33,9 +33,6 @@ class HomeFragment : Fragment() {
 			btnVocab.setOnClickListener(OnVocabClickListener())
 			btnAbout.setOnClickListener(OnAboutClickListener())
 			btnRate.setOnClickListener(OnRateClickListener())
-
-			/* TEMP FOR 1.0 ONLY */
-			btnRate.visibility = View.GONE
 		}
 	}
 
@@ -60,7 +57,7 @@ class HomeFragment : Fragment() {
 	private inner class OnRateClickListener : View.OnClickListener {
 		override fun onClick(v: View?) {
 			val intent = Intent(Intent.ACTION_VIEW)
-			intent.data = Uri.parse("https://play.google.com/store/apps/")
+			intent.data = Uri.parse("market://details?id=tech.parzival48.thoeic")
 			startActivity(intent)
 		}
 	}
