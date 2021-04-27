@@ -99,7 +99,7 @@ class SplashActivity : AppCompatActivity() {
 
 	private fun showUpdateSnackbar() {
 		Snackbar.make(binding.root, "เกมนี้มีเวอร์ชั่นใหม่ออกแล้วนะ", Snackbar.LENGTH_LONG)
-				//.setAction("อัพเดท!", OnUpdateClickListener())
+				.setAction("อัพเดท!", OnUpdateClickListener())
 				.setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
 				.setBackgroundTint(getColor(R.color.dimWhite))
 				.setTextColor(getColor(R.color.textBlack))
@@ -122,7 +122,7 @@ class SplashActivity : AppCompatActivity() {
 		override fun onClick(v: View?) {
 			backPressed = true
 			val intent = Intent(Intent.ACTION_VIEW)
-			intent.data = Uri.parse("https://play.google.com/store/apps/")
+			intent.data = Uri.parse("market://details?id=tech.parzival48.thoeic")
 			startActivity(intent)
 		}
 
