@@ -17,8 +17,8 @@ android {
         applicationId "tech.parzival48.thoeic"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 1
-        versionName "2021.4.26"
+        versionCode 2
+        versionName "2021.4.28"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
