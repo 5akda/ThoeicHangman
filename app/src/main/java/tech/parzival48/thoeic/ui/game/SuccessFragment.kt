@@ -32,7 +32,7 @@ class SuccessFragment : Fragment() {
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
 
-		viewModel.words.observe(viewLifecycleOwner, {
+		viewModel.getWords().observe(viewLifecycleOwner, {
 			val shuffledList = it.shuffled()
 			answerSynonym = it[0].synonym
 			with(binding) {

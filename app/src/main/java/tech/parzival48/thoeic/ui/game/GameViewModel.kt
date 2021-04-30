@@ -1,9 +1,11 @@
 package tech.parzival48.thoeic.ui.game
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import tech.parzival48.thoeic.model.Word
 import tech.parzival48.thoeic.network.WordApiService
 import tech.parzival48.thoeic.repository.WordDataSource
@@ -11,9 +13,9 @@ import java.util.*
 
 class GameViewModel(apiService: WordApiService) : ViewModel() {
 
-	val words = MutableLiveData<List<Word>>()
-	val displayString = MutableLiveData<String>()
-	val numOfAttempts = MutableLiveData<Int>()
+	private val words = MutableLiveData<List<Word>>()
+	private val displayString = MutableLiveData<String>()
+	private val numOfAttempts = MutableLiveData<Int>()
 
 	private val wordDataSource = WordDataSource(apiService)
 
@@ -43,10 +45,16 @@ class GameViewModel(apiService: WordApiService) : ViewModel() {
 
 	fun initDisplayString(quizWord: String?) {
 		var quizString = ""
-		quizWord?.forEach {
+		repeat(quizWord?.length?:0) {
 			quizString += "_"
 		}
 		displayString.postValue(quizString)
 	}
+
+	fun getWords(): LiveData<List<Word>> = words
+
+	fun getDisplayString(): LiveData<String> = displayString
+
+	fun getNumOfAttempts(): LiveData<Int> = numOfAttempts
 
 }

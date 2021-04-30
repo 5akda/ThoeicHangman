@@ -67,18 +67,18 @@ class GameActivity : AppCompatActivity() {
 	private fun observeLiveData() {
 		var quizWord: String? = null
 
-		viewModel.words.observe(this, {
+		viewModel.getWords().observe(this, {
 			quizWord = it[0].english
 			viewModel.initDisplayString(quizWord)
 			loading.dismiss()
 		})
 
-		viewModel.displayString.observe(this, {
+		viewModel.getDisplayString().observe(this, {
 			binding.txtDisplay.text = it
 			if (it == quizWord?.toUpperCase(Locale.ROOT)) gameEnding(true)
 		})
 
-		viewModel.numOfAttempts.observe(this, {
+		viewModel.getNumOfAttempts().observe(this, {
 			if (it == MAX_ATTEMPTS) {
 				gameEnding(false)
 			} else {

@@ -28,7 +28,7 @@ class OverFragment : Fragment() {
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
 
-		viewModel.words.observe(viewLifecycleOwner, {
+		viewModel.getWords().observe(viewLifecycleOwner, {
 			with(binding) {
 				txtEnglish.text = it[0].english
 				txtMeaning.text = it[0].meaning
