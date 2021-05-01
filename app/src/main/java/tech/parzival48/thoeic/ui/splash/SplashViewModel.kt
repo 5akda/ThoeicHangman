@@ -2,8 +2,8 @@ package tech.parzival48.thoeic.ui.splash
 
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -11,10 +11,11 @@ import tech.parzival48.thoeic.repository.AppVersionFirestoreData
 import tech.parzival48.thoeic.repository.UrlFirestoreData
 import timber.log.Timber
 
-class SplashViewModel(databaseService: FirebaseFirestore) : ViewModel() {
+class SplashViewModel(
+		private val versionFirestoreData: AppVersionFirestoreData,
+		private val urlFirestoreData: UrlFirestoreData
+) : ViewModel() {
 
-	val latestVersion = AppVersionFirestoreData(databaseService)
-	val baseUrl = UrlFirestoreData(databaseService)
 	private val animations = listOf(
 			"_ _ _ _ M _ _",
 			"H _ _ _ M _ _",
@@ -43,5 +44,9 @@ class SplashViewModel(databaseService: FirebaseFirestore) : ViewModel() {
 		}
 		return false
 	}
+
+	fun getLatestVersion(): LiveData<Int> = versionFirestoreData
+
+	fun getBaseUrl(): LiveData<String> = urlFirestoreData
 
 }

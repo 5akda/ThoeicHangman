@@ -83,7 +83,7 @@ class SplashActivity : AppCompatActivity() {
 	}
 
 	private fun observeNewerUpdate() {
-		viewModel.latestVersion.observe(this, {
+		viewModel.getLatestVersion().observe(this, {
 			if (BuildConfig.VERSION_CODE < it) {
 				showUpdateSnackbar()
 			}
@@ -91,7 +91,7 @@ class SplashActivity : AppCompatActivity() {
 	}
 
 	private fun observeUrl() {
-		viewModel.baseUrl.observe(this, {
+		viewModel.getBaseUrl().observe(this, {
 			NetworkProvider.setApiUrl(it)
 			redirectToHomeActivity()
 		})

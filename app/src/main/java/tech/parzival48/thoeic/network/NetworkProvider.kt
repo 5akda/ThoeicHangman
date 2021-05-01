@@ -18,7 +18,7 @@ object NetworkProvider {
 		mApiUrl = apiUrl
 	}
 
-	fun getFirebaseRetrofit(): Retrofit {
+	fun getRtdbRetrofit(): Retrofit {
 		Timber.d("Retrofit Base URL: %s", mApiUrl)
 		return Retrofit.Builder()
 				.baseUrl(mApiUrl)

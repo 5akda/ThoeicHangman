@@ -5,19 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import tech.parzival48.thoeic.model.Word
-import tech.parzival48.thoeic.network.WordApiService
 import tech.parzival48.thoeic.repository.WordDataSource
 import java.util.*
 
-class GameViewModel(apiService: WordApiService) : ViewModel() {
+class GameViewModel(wordDataSource: WordDataSource) : ViewModel() {
 
 	private val words = MutableLiveData<List<Word>>()
 	private val displayString = MutableLiveData<String>()
 	private val numOfAttempts = MutableLiveData<Int>()
-
-	private val wordDataSource = WordDataSource(apiService)
 
 	init {
 		viewModelScope.launch {
@@ -40,12 +36,12 @@ class GameViewModel(apiService: WordApiService) : ViewModel() {
 		if (!existed) {
 			numOfAttempts.value = numOfAttempts.value?.plus(1)
 		}
-		displayString.value = temp?:"error"
+		displayString.value = temp ?: "error"
 	}
 
 	fun initDisplayString(quizWord: String?) {
 		var quizString = ""
-		repeat(quizWord?.length?:0) {
+		repeat(quizWord?.length ?: 0) {
 			quizString += "_"
 		}
 		displayString.postValue(quizString)

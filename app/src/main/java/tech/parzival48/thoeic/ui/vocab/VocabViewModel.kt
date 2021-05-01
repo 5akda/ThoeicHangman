@@ -5,10 +5,9 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
-import tech.parzival48.thoeic.network.VocabApiService
 import tech.parzival48.thoeic.repository.VocabularyDataSource
 
-class VocabViewModel(private val apiService: VocabApiService) : ViewModel() {
+class VocabViewModel(private val vocabDataSource: VocabularyDataSource) : ViewModel() {
 
 	companion object {
 		private const val PAGE_SIZE = 30
@@ -21,8 +20,6 @@ class VocabViewModel(private val apiService: VocabApiService) : ViewModel() {
 			prefetchDistance = PREFETCH_DISTANCE
 	)
 
-	var vocabulary = Pager(config) {
-		VocabularyDataSource(apiService)
-	}.flow.cachedIn(viewModelScope)
+	var vocabulary = Pager(config) { vocabDataSource }.flow.cachedIn(viewModelScope)
 
 }

@@ -39,8 +39,8 @@ class AboutDialogFragment : DialogFragment() {
 			val intent = Intent(Intent.ACTION_SEND)
 			intent.data = Uri.parse("mailto:parzival48.tech@gmail.com")
 			try {
-			    startActivity(intent)
-			} catch(e: ActivityNotFoundException) {
+				startActivity(intent)
+			} catch (e: ActivityNotFoundException) {
 				Timber.d("ERROR! Activity no found.")
 			}
 		}

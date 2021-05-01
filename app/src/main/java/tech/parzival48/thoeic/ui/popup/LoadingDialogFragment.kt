@@ -24,13 +24,13 @@ class LoadingDialogFragment : DialogFragment() {
 
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
+		dialog?.setCancelable(false)
 		dialog?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 
-		dialog?.setCancelable(false)
 		dialog?.window?.setBackgroundDrawableResource(R.color.transparent)
 	}
 
