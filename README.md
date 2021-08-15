@@ -1,7 +1,12 @@
 <h1 align="center">THOEIC Hangman</h1>
 
 <p align="center">
-  <a href="https://android-arsenal.com/api?level=23"><img alt="API" src="https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat"/></a>
+  <a href="https://android-arsenal.com/api?level=23">
+    <img alt="API" src="https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat"/>
+  </a>
+  <a href="https://github.com/parzival48/ThoeicHangman/blob/main/LICENSE">
+    <img src="https://camo.githubusercontent.com/78f47a09877ba9d28da1887a93e5c3bc2efb309c1e910eb21135becd2998238a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d79656c6c6f772e737667" alt="PyPI license" data-canonical-src="https://img.shields.io/pypi/l/ansicolortags.svg">
+  </a>
 </p>
 
 <p align="center">
